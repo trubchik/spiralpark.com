@@ -1,0 +1,364 @@
+/* ═══════════════════════════════════════════════
+   Spiral Park Madeira — Main Stylesheet
+   ═══════════════════════════════════════════════ */
+
+/* ── Reset & Base ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  color: #333;
+  background: #fff;
+  line-height: 1.6;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ── Container ── */
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ═══ HEADER ═══════════════════════════════════ */
+.site-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 32px 24px 28px;
+  background: #fff;
+}
+
+.logo-link {
+  display: block;
+}
+
+.logo {
+  width: 120px;
+  height: auto;
+}
+
+/* ═══ HERO ══════════════════════════════════════ */
+.hero {
+  width: 100%;
+  min-height: 375px;
+  background-image: url('images/hero-forest.jpg');
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.28);
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 60px 24px;
+  max-width: 700px;
+}
+
+.hero-text {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 300;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 36px;
+  letter-spacing: 0.01em;
+}
+
+/* ═══ BUTTONS ════════════════════════════════════ */
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 40px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+.btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.btn-outline {
+  background: #fff;
+  color: #333;
+  border: 1.5px solid #fff;
+}
+
+.btn-telegram {
+  background: #00a3e0;
+  color: #fff;
+  border: none;
+}
+
+.btn-dark {
+  background: #1b1b27;
+  color: #fff;
+  border: none;
+}
+
+/* ═══ SECTIONS — shared ══════════════════════════ */
+.section {
+  padding: 72px 0;
+}
+
+.section-title {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 400;
+  color: #aaa;
+  text-align: center;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+  margin-bottom: 48px;
+  max-width: 680px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ═══ TWO-COLUMN GRID ════════════════════════════ */
+.cards-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+/* ═══ EVENTS ══════════════════════════════════════ */
+.events-section {
+  background: #fff;
+}
+
+.events-section .section-title {
+  margin-bottom: 48px;
+}
+
+.event-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* YouTube embed responsive */
+.video-wrapper {
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+  margin-bottom: 16px;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.event-img {
+  width: 100%;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.event-date {
+  color: #ffa44f;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: none;
+  margin-bottom: 6px;
+}
+
+.event-title {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 4px;
+}
+
+.event-title-link .event-title {
+  text-decoration: underline;
+}
+
+.event-title-link:hover .event-title {
+  color: #222;
+}
+
+.event-subtitle {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.telegram-cta-wrap {
+  text-align: center;
+}
+
+.telegram-cta-text {
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 20px;
+}
+
+/* ═══ PROJECTS ════════════════════════════════════ */
+.projects-section {
+  background: #f2f2f2;
+}
+
+.projects-section .section-title {
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.project-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.project-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  margin-bottom: 8px;
+  letter-spacing: 0.06em;
+}
+
+.project-title:hover {
+  color: #000;
+}
+
+.project-desc {
+  font-size: 0.85rem;
+  color: #777;
+}
+
+/* ═══ GUESTS ══════════════════════════════════════ */
+.guests-section {
+  background: #fff;
+  text-align: center;
+}
+
+.guests-section .section-title {
+  margin-bottom: 48px;
+}
+
+.guest-card {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ═══ FOOTER ══════════════════════════════════════ */
+.site-footer {
+  background: #545760;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 56px 24px 32px;
+}
+
+.footer-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 32px;
+  margin-bottom: 40px;
+}
+
+.footer-col {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 0.88rem;
+}
+
+.footer-col a {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.footer-col a:hover {
+  color: #fff;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.45);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 24px;
+}
+
+/* ═══ RESPONSIVE ══════════════════════════════════ */
+@media (max-width: 680px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .hero-text {
+    font-size: 1.5rem;
+  }
+
+  .section {
+    padding: 48px 0;
+  }
+}
