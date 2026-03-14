@@ -1,0 +1,443 @@
+/* ═══════════════════════════════════════════════
+   spiral-steam.html — Steam Ceremony page styles
+   ═══════════════════════════════════════════════ */
+
+/* ── Scroll animations ── */
+.animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate.visible {
+  opacity: 1;
+  transform: none;
+}
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .animate { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO — full-bleed aerial image
+   ═══════════════════════════════════════════════ */
+.steam-hero {
+  position: relative;
+  width: 100%;
+  height: 70vh;
+  min-height: 440px;
+  max-height: 700px;
+  overflow: hidden;
+}
+.steam-hero-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+.steam-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0) 60%);
+}
+
+/* ═══════════════════════════════════════════════
+   TITLE SECTION
+   ═══════════════════════════════════════════════ */
+.steam-title-section {
+  padding: 72px 24px 64px;
+  text-align: center;
+  background: #fff;
+  border-bottom: 1px solid #ebebeb;
+}
+.steam-title-section .section-label {
+  margin-bottom: 20px;
+}
+.steam-title {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.025em;
+  line-height: 1.18;
+  margin-bottom: 28px;
+}
+.steam-title span {
+  color: #888;
+  font-style: italic;
+}
+.steam-lead {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  font-weight: 300;
+  color: #666;
+  line-height: 1.85;
+  max-width: 760px;
+  margin: 0 auto;
+}
+.steam-title-section .section-label + .steam-title::before {
+  display: none;
+}
+
+/* Decorative line */
+.steam-title-section .container::after {
+  content: '';
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: #ffa44f;
+  margin: 36px auto 0;
+  border-radius: 2px;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION WRAPPERS
+   ═══════════════════════════════════════════════ */
+.steam-section {
+  background: #fff;
+}
+.steam-section:nth-child(even) {
+  background: #f7f7f5;
+}
+.steam-formats {
+  background: #f7f7f5;
+}
+.steam-booking {
+  background: #fff;
+}
+
+/* ═══════════════════════════════════════════════
+   WHAT IS IT — split layout
+   ═══════════════════════════════════════════════ */
+.steam-split {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 80px;
+  align-items: start;
+}
+.steam-section-title {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 48px;
+}
+.steam-split-photo {
+  position: sticky;
+  top: 100px;
+  border-radius: 16px;
+  overflow: hidden;
+}
+.steam-split-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+}
+
+/* Steps */
+.steam-step {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 40px;
+}
+.steam-step:last-child {
+  margin-bottom: 0;
+}
+.steam-step-num {
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #ffa44f;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+.steam-step-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+.steam-step-duration {
+  font-weight: 300;
+  color: #888;
+  font-size: 0.9rem;
+}
+.steam-step-desc {
+  font-size: 0.93rem;
+  color: #555;
+  line-height: 1.85;
+  margin-bottom: 12px;
+}
+
+/* Lists */
+.steam-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.steam-list li {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.7;
+  padding-left: 18px;
+  position: relative;
+}
+.steam-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: #ffa44f;
+  font-size: 0.8rem;
+}
+.steam-list--plain li::before {
+  content: '—';
+}
+
+/* ═══════════════════════════════════════════════
+   FORMATS — two format rows
+   ═══════════════════════════════════════════════ */
+.steam-formats-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.025em;
+  text-align: center;
+  margin-bottom: 72px;
+}
+.steam-format-row {
+  display: grid;
+  grid-template-columns: 420px 1fr;
+  gap: 72px;
+  align-items: center;
+  margin-bottom: 80px;
+}
+.steam-format-row:last-child {
+  margin-bottom: 0;
+}
+.steam-format-row--flip {
+  grid-template-columns: 1fr 420px;
+}
+.steam-format-row--flip .steam-format-photo {
+  order: 2;
+}
+.steam-format-row--flip .steam-format-text {
+  order: 1;
+}
+.steam-format-photo {
+  border-radius: 16px;
+  overflow: hidden;
+}
+.steam-format-photo img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.steam-format-photo:hover img {
+  transform: scale(1.04);
+}
+.steam-format-name {
+  font-size: clamp(1.4rem, 2.5vw, 2rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+.steam-format-desc {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.85;
+  margin-bottom: 14px;
+}
+.steam-link {
+  color: #ffa44f;
+  font-weight: 500;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(255,164,79,0.3);
+  transition: border-color 0.2s;
+}
+.steam-link:hover {
+  border-color: #ffa44f;
+}
+
+/* Meta (duration / price) */
+.steam-meta-row {
+  display: flex;
+  gap: 40px;
+  margin-top: 28px;
+  padding-top: 24px;
+  border-top: 1px solid #ebebeb;
+}
+.steam-meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.steam-meta-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #bbb;
+}
+.steam-meta-value {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.steam-price {
+  color: #ffa44f;
+}
+.steam-per {
+  font-size: 0.75rem;
+  font-weight: 400;
+  color: #999;
+}
+
+/* Price grid */
+.steam-format-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #aaa;
+  margin-top: 24px;
+  margin-bottom: 14px;
+}
+.steam-price-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.steam-price-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: #fff;
+  border-radius: 10px;
+  border: 1px solid #ebebeb;
+}
+.steam-price-row--extra {
+  background: transparent;
+  border-style: dashed;
+  border-color: #e0e0e0;
+}
+.steam-price-group {
+  font-size: 0.9rem;
+  color: #444;
+}
+.steam-price-amount {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffa44f;
+}
+.steam-included {
+  font-size: 0.83rem;
+  color: #999;
+  line-height: 1.75;
+  font-style: italic;
+  border-left: 2px solid #ffa44f;
+  padding-left: 14px;
+  margin-top: 8px;
+}
+
+/* ═══════════════════════════════════════════════
+   BOOKING
+   ═══════════════════════════════════════════════ */
+.steam-booking-inner {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.steam-booking-title {
+  font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.025em;
+  margin-bottom: 36px;
+}
+.steam-booking-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.steam-booking-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.steam-booking-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+.steam-booking-btn--tg {
+  background: #00a3e0;
+  color: #fff;
+}
+.steam-booking-btn--wa {
+  background: #25d366;
+  color: #fff;
+}
+.steam-booking-or {
+  font-size: 0.85rem;
+  color: #bbb;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .steam-split {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+  .steam-split-photo {
+    position: static;
+    max-width: 480px;
+  }
+  .steam-split-photo img {
+    aspect-ratio: 4 / 3;
+  }
+  .steam-format-row,
+  .steam-format-row--flip {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .steam-format-row--flip .steam-format-photo,
+  .steam-format-row--flip .steam-format-text {
+    order: unset;
+  }
+  .steam-format-photo img {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+@media (max-width: 640px) {
+  .steam-hero { height: 55vw; min-height: 280px; }
+  .steam-title-section { padding: 56px 24px 48px; }
+  .steam-meta-row { gap: 24px; }
+  .steam-booking-contacts { flex-direction: column; }
+  .steam-booking-btn { width: 100%; justify-content: center; }
+}

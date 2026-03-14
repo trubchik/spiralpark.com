@@ -4,41 +4,54 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Spiral Park Madeira</title>
-  <meta name="description" content="A space to connect with yourself, nature, and others — to co-create. Spiral Park, Madeira." />
-  <link rel="icon" type="image/png" href="fav.png" />
+  <meta name="description" content="A gathering place in the forests of Madeira — music, steam ceremonies, art and co-creation." />
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- ═══ HEADER ═══ -->
-  <header class="site-header">
-    <a href="/" class="logo-link">
-      <img src="images/logo.svg" alt="Spiral Park Madeira" class="logo" />
-    </a>
+  <!-- ═══ NAV ═══ -->
+  <header class="site-nav" id="site-nav">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo">
+        <img src="lgsp.png" alt="Spiral Park Madeira" class="nav-logo-img" />
+      </a>
+      <nav class="nav-links">
+        <a href="#events">Events</a>
+        <a href="#projects">Projects</a>
+        <a href="#guests">Guests</a>
+      </nav>
+    </div>
   </header>
 
   <!-- ═══ HERO ═══ -->
-  <section class="hero">
-    <div class="hero-overlay">
+  <section class="hero" id="hero">
+    <div class="hero-content">
+      <p class="hero-label">SPIRAL PARK · MADEIRA</p>
       <h1 class="hero-text">
-        A space to connect with yourself, nature, and others —
-        to co-create
+        A space to connect<br>
+        with yourself, nature,<br>
+        and others — to co-create
       </h1>
-      <a href="poject.html" class="btn btn-outline">Learn More</a>
+      <a href="#about" class="btn btn-hero">Learn More</a>
     </div>
   </section>
 
   <!-- ═══ UPCOMING EVENTS ═══ -->
-  <section class="section events-section">
+  <section class="section events-section" id="events">
     <div class="container">
+      <p class="section-label">SCHEDULE</p>
       <h2 class="section-title">Upcoming Events</h2>
 
       <div class="cards-grid">
 
-        <!-- Event 1: Spiral Flow -->
         <div class="event-card">
           <div class="video-wrapper">
             <iframe
@@ -49,27 +62,24 @@
               allowfullscreen
             ></iframe>
           </div>
-          <p class="event-date">6 December</p>
+          <p class="event-date">In April 2026</p>
           <p class="event-title">Spiral Flow</p>
           <p class="event-subtitle">Musical improvisation of our community</p>
         </div>
 
-        <!-- Event 2: Steam Ceremony -->
         <div class="event-card">
-          <a href="spiral-steam.html">
+          <a href="spiral-steam.html" class="card-img-link">
             <img src="images/steam-ceremony.jpg" alt="Steam ceremony" class="event-img" />
           </a>
           <p class="event-date">Every Thursday</p>
-          <a href="spiral-steam.html" class="event-title-link">
-            <p class="event-title">Steam ceremony</p>
-          </a>
+          <a href="spiral-steam.html" class="event-title-link">Steam ceremony</a>
         </div>
 
       </div>
 
-      <div class="telegram-cta-wrap">
-        <p class="telegram-cta-text">Find more events in our Telegram channel</p>
-        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" class="btn btn-telegram">
+      <div class="section-cta">
+        <p class="cta-text">Find more events in our Telegram channel</p>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" class="btn btn-tg">
           Join Telegram Channel
         </a>
       </div>
@@ -77,26 +87,27 @@
   </section>
 
   <!-- ═══ PARK PROJECTS ═══ -->
-  <section class="section projects-section">
+  <section class="section projects-section" id="projects">
     <div class="container">
+      <p class="section-label">CO-CREATION</p>
       <h2 class="section-title">Park Projects</h2>
-      <p class="section-subtitle">You can participate in the creation of these functional art objects in our park</p>
+      <p class="section-subtitle">
+        You can participate in the creation of these functional art objects in our park
+      </p>
 
       <div class="cards-grid">
 
-        <!-- Project 1: Silent Flow -->
         <div class="project-card">
-          <a href="silent-flow.html">
+          <a href="silent-flow.html" class="card-img-link">
             <img src="images/silent-flow.gif" alt="Silent Flow — old boat art project" class="project-img" />
           </a>
           <a href="silent-flow.html" class="project-title">SILENT FLOW</a>
           <p class="project-desc">An old boat to be turned into an art project</p>
         </div>
 
-        <!-- Project 2: The Egg -->
         <div class="project-card">
-          <a href="the-egg.html">
-            <img src="images/the-egg.gif" alt="The Egg — space for soundhilling, retreats, and ceremonies" class="project-img" />
+          <a href="the-egg.html" class="card-img-link">
+            <img src="images/the-egg.gif" alt="The Egg — space for retreats and ceremonies" class="project-img" />
           </a>
           <a href="the-egg.html" class="project-title">THE EGG</a>
           <p class="project-desc">Space for soundhilling, retreats, and ceremonies</p>
@@ -107,13 +118,13 @@
   </section>
 
   <!-- ═══ SPIRAL GUESTS ═══ -->
-  <section class="section guests-section">
+  <section class="section guests-section" id="guests">
     <div class="container">
-      <h2 class="section-title">Spiral Guests:</h2>
+      <p class="section-label">CONVERSATIONS</p>
+      <h2 class="section-title">Spiral Guests</h2>
 
       <div class="cards-grid">
 
-        <!-- Guest 1: Рома Бабак -->
         <div class="guest-card">
           <div class="video-wrapper">
             <iframe
@@ -126,7 +137,6 @@
           </div>
         </div>
 
-        <!-- Guest 2: Игорь Рябенький -->
         <div class="guest-card">
           <div class="video-wrapper">
             <iframe
@@ -141,9 +151,11 @@
 
       </div>
 
-      <a href="https://www.youtube.com/@hiking_with_meaning" target="_blank" class="btn btn-dark">
-        Go to channel
-      </a>
+      <div class="section-cta">
+        <a href="https://www.youtube.com/@hiking_with_meaning" target="_blank" class="btn btn-dark">
+          Go to channel
+        </a>
+      </div>
     </div>
   </section>
 
@@ -152,24 +164,36 @@
     <div class="container footer-inner">
 
       <div class="footer-col">
-        <p>CEO Ruslan Trubchik</p>
-        <p><a href="mailto:rtrubchik@gmail.com">rtrubchik@gmail.com</a></p>
-        <p><a href="tel:+351910293415">+351 910 293 415</a></p>
+        <span class="footer-name">CEO Ruslan Trubchik</span>
+        <a href="mailto:rtrubchik@gmail.com">rtrubchik@gmail.com</a>
+        <a href="tel:+351910293415">+351 910 293 415</a>
       </div>
 
-      <div class="footer-col">
+      <div class="footer-col footer-col--center">
+        <img src="images/logo.svg" alt="Spiral Park" class="footer-logo" />
+      </div>
+
+      <div class="footer-col footer-col--right">
         <a href="poject.html">About project</a>
         <a href="spiral-steam.html">Steam Ceremony</a>
-      </div>
-
-      <div class="footer-col">
-        <a href="http://instagram.com/spiral_madeira" target="_blank">instagram</a>
-        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank">telegram</a>
+        <a href="http://instagram.com/spiral_madeira" target="_blank">Instagram</a>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank">Telegram</a>
       </div>
 
     </div>
     <p class="footer-copy">© 2025, SPIRAL – All rights reserved</p>
   </footer>
+
+  <script>
+    // Nav: transparent over hero → white on scroll
+    const nav = document.getElementById('site-nav');
+    const hero = document.getElementById('hero');
+    const observer = new IntersectionObserver(
+      ([entry]) => nav.classList.toggle('scrolled', !entry.isIntersecting),
+      { threshold: 0.15 }
+    );
+    observer.observe(hero);
+  </script>
 
 </body>
 </html>

@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spiral Park — Инвестиционный обзор</title>
+<link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+<link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+<link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+<link rel="manifest" href="favicon/site.webmanifest" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300&display=swap" rel="stylesheet">
+<style>
+
+/* ─── RESET ─────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+img { display: block; max-width: 100%; }
+a { color: inherit; text-decoration: none; }
+
+/* ─── TOKENS ────────────────────────────── */
+:root {
+  --orange: #ffa44f;
+  --dark:   #1a1a1a;
+  --navy:   #1e1e26;
+  --text:   #555;
+  --muted:  #888;
+  --light:  #bbb;
+  --cream:  #f7f5f2;
+  --border: #ebebeb;
+  --sp: clamp(56px, 9vw, 108px);
+  --px: clamp(24px, 6vw, 80px);
+}
+
+/* ─── BASE ──────────────────────────────── */
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ─── CONTAINER ─────────────────────────── */
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 var(--px);
+}
+
+/* ─── LABEL ─────────────────────────────── */
+.label {
+  display: inline-block;
+  font-size: clamp(9px, 1.4vw, 11px);
+  font-weight: 700;
+  letter-spacing: 0.26em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+
+/* ─── RULE ──────────────────────────────── */
+.rule {
+  width: 36px;
+  height: 2px;
+  background: var(--orange);
+  margin-bottom: 24px;
+}
+
+/* ─── SECTION ───────────────────────────── */
+.section {
+  padding: var(--sp) 0;
+  border-bottom: 1px solid var(--border);
+}
+.section.dark {
+  background: var(--navy);
+  border-bottom: none;
+}
+.section.cream {
+  background: var(--cream);
+}
+.section.no-border { border-bottom: none; }
+
+/* ─── HEADINGS ──────────────────────────── */
+.sec-title {
+  font-size: clamp(1.6rem, 3.5vw, 2.8rem);
+  font-weight: 400;
+  color: var(--dark);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(16px, 2.5vw, 28px);
+}
+.section.dark .sec-title { color: #fff; }
+
+.sec-lead {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.85;
+  max-width: 700px;
+}
+.section.dark .sec-lead { color: rgba(255,255,255,.45); }
+
+
+/* ═══════════════════════════════════════
+   HERO
+═══════════════════════════════════════ */
+.hero {
+  position: relative;
+  height: 100svh;
+  min-height: 580px;
+  max-height: 980px;
+  overflow: hidden;
+}
+.hero-img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+}
+.hero-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(12,12,12,.62) 0%,
+    rgba(12,12,12,.2)  48%,
+    rgba(12,12,12,.75) 100%
+  );
+}
+.hero-body {
+  position: absolute; inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 var(--px);
+  padding-bottom: clamp(80px, 15vw, 150px);
+}
+.hero-logo {
+  height: clamp(36px, 5vw, 54px);
+  filter: brightness(0) invert(1);
+  opacity: .88;
+  margin-bottom: clamp(28px, 4vw, 48px);
+}
+.hero-eyebrow {
+  font-size: clamp(9px, 1.6vw, 12px);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.48);
+  margin-bottom: 18px;
+}
+.hero-title {
+  font-size: clamp(1.8rem, 4.5vw, 3.4rem);
+  font-weight: 400;
+  color: #fff;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  max-width: 820px;
+}
+.hero-sub {
+  margin-top: clamp(16px, 2.5vw, 24px);
+  font-size: clamp(13px, 2vw, 18px);
+  color: rgba(255,255,255,.88);
+  letter-spacing: .06em;
+  line-height: 1.8;
+}
+.hero-nums {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  display: flex;
+  border-top: 1px solid rgba(255,255,255,.1);
+}
+.hero-num {
+  flex: 1;
+  padding: clamp(18px, 3vw, 28px) clamp(12px, 2vw, 24px);
+  text-align: center;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.hero-num:last-child { border-right: none; }
+.hero-num-big {
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+.hero-num-lbl {
+  font-size: clamp(8px, 1.2vw, 10px);
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.33);
+  margin-top: 6px;
+}
+
+
+/* ═══════════════════════════════════════
+   TRACTION STRIP
+═══════════════════════════════════════ */
+.traction { border-bottom: 1px solid var(--border); }
+.traction-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.traction-item {
+  padding: clamp(28px, 5vw, 52px) clamp(16px, 3vw, 32px);
+  text-align: center;
+  border-right: 1px solid var(--border);
+}
+.traction-item:last-child { border-right: none; }
+.traction-big {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--dark);
+  line-height: 1;
+  letter-spacing: -.03em;
+}
+.traction-lbl {
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 600;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-top: 10px;
+}
+
+
+/* ═══════════════════════════════════════
+   INTRO GRID
+═══════════════════════════════════════ */
+.intro-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: clamp(32px, 6vw, 96px);
+  align-items: start;
+}
+.bullet-list {
+  list-style: none;
+  margin-top: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.bullet-list li {
+  font-size: clamp(13px, 1.6vw, 15px);
+  color: var(--dark);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.55;
+}
+.bullet-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 1.5em;
+  line-height: 1;
+  top: 1px;
+  font-weight: 700;
+}
+
+
+/* ═══════════════════════════════════════
+   PHOTO GRIDS
+═══════════════════════════════════════ */
+.photo-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.photo-grid-3 img {
+  width: 100%;
+  height: clamp(220px, 30vw, 400px);
+  object-fit: cover;
+}
+.photo-grid-3.people img {
+  height: clamp(280px, 38vw, 520px);
+}
+.photo-grid-4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
+.photo-grid-4 img {
+  width: 100%;
+  height: clamp(180px, 24vw, 340px);
+  object-fit: cover;
+}
+.photo-break {
+  height: clamp(200px, 32vw, 440px);
+  overflow: hidden;
+}
+.photo-break.aerial {
+  height: clamp(280px, 42vw, 600px);
+}
+.photo-break img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+}
+
+
+/* ═══════════════════════════════════════
+   ASSET LIST
+═══════════════════════════════════════ */
+.asset-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.asset-item {
+  padding: clamp(18px, 2.5vw, 28px) clamp(20px, 3vw, 32px);
+  background: #fff;
+  border-left: 3px solid var(--orange);
+}
+.asset-item strong {
+  display: block;
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 5px;
+}
+.asset-item span {
+  font-size: clamp(12px, 1.4vw, 13px);
+  color: var(--muted);
+  line-height: 1.65;
+}
+
+
+/* ═══════════════════════════════════════
+   THE PROPOSITION (dark section)
+═══════════════════════════════════════ */
+.prop-inner {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 0 clamp(40px, 7vw, 96px);
+  align-items: start;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.prop-numbers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 52px);
+  align-items: flex-end;
+}
+.prop-num-big {
+  font-size: clamp(2rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+  letter-spacing: -.04em;
+}
+.prop-num-lbl {
+  font-size: clamp(9px, 1.2vw, 11px);
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.33);
+  margin-top: 7px;
+}
+.prop-sep {
+  width: 1px;
+  height: 100px;
+  background: rgba(255,255,255,.1);
+  flex-shrink: 0;
+  margin-top: 8px;
+}
+.prop-text {
+  margin-top: 20px;
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,.5);
+  line-height: 1.85;
+}
+.funds-label {
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 700;
+  letter-spacing: .24em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 16px;
+}
+.funds-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.funds-list li {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: rgba(255,255,255,.54);
+  padding-left: 20px;
+  position: relative;
+  line-height: 1.65;
+}
+.funds-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: .85em;
+  top: 2px;
+}
+.fund-amt {
+  font-weight: 700;
+  color: rgba(255,255,255,.85);
+}
+
+
+/* ═══════════════════════════════════════
+   SIMPLE LIST
+═══════════════════════════════════════ */
+.simple-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+}
+.simple-list li {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: var(--text);
+  padding-left: 18px;
+  position: relative;
+  line-height: 1.65;
+}
+.simple-list li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--orange);
+  font-size: 1.4em;
+  line-height: 1;
+  top: 2px;
+  font-weight: 700;
+}
+.simple-list li strong { color: var(--dark); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════
+   CALLOUT
+═══════════════════════════════════════ */
+.callout {
+  border-left: 3px solid var(--orange);
+  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 32px);
+  background: var(--cream);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.callout-title {
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 7px;
+}
+.callout-body {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+
+/* ═══════════════════════════════════════
+   TWO-COLUMN GRID
+═══════════════════════════════════════ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 80px);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+
+
+/* ═══════════════════════════════════════
+   ECONOMICS TABLE
+═══════════════════════════════════════ */
+.table-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-top: clamp(24px, 3.5vw, 40px);
+}
+.clean-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: clamp(12px, 1.4vw, 14px);
+  white-space: nowrap;
+}
+.clean-table th {
+  font-size: clamp(8px, 1.1vw, 10px);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--light);
+  text-align: left;
+  padding: 10px 14px;
+  border-bottom: 2px solid var(--border);
+}
+.clean-table th:first-child { padding-left: 0; }
+.clean-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  vertical-align: top;
+  white-space: normal;
+}
+.clean-table td:first-child { padding-left: 0; }
+.clean-table tr.total td {
+  font-weight: 700;
+  color: var(--dark);
+  border-top: 2px solid var(--border);
+  border-bottom: none;
+}
+.clean-table .orange { color: var(--orange); }
+
+
+/* ═══════════════════════════════════════
+   SCENARIOS
+═══════════════════════════════════════ */
+.scenarios {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.scenario {
+  padding: clamp(20px, 3vw, 32px) clamp(18px, 2.5vw, 28px);
+  background: #fff;
+}
+.scenario.highlighted { background: var(--navy); }
+.scenario-name {
+  font-size: clamp(9px, 1.2vw, 11px);
+  font-weight: 700;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--light);
+  margin-bottom: 10px;
+}
+.scenario.highlighted .scenario-name { color: var(--orange); }
+.scenario-rev {
+  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-weight: 700;
+  color: var(--orange);
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin-bottom: 4px;
+}
+.scenario-period {
+  font-size: clamp(11px, 1.3vw, 13px);
+  color: var(--muted);
+  font-weight: 500;
+  margin-bottom: 14px;
+}
+.scenario.highlighted .scenario-period { color: rgba(255,255,255,.38); }
+.scenario-rows {
+  list-style: none;
+  border-top: 1px solid var(--border);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+.scenario.highlighted .scenario-rows { border-top-color: rgba(255,255,255,.12); }
+.scenario-rows li {
+  font-size: clamp(12px, 1.3vw, 13px);
+  color: var(--text);
+  padding: 3px 0;
+  border-bottom: 1px solid var(--border);
+  line-height: 1.55;
+}
+.scenario-rows li:last-child { border-bottom: none; }
+.scenario.highlighted .scenario-rows li {
+  color: rgba(255,255,255,.58);
+  border-bottom-color: rgba(255,255,255,.08);
+}
+.scenario-rows li strong { color: var(--dark); font-weight: 600; }
+.scenario.highlighted .scenario-rows li strong { color: rgba(255,255,255,.88); }
+.small-note {
+  margin-top: 14px;
+  font-size: clamp(11px, 1.3vw, 12px);
+  color: var(--muted);
+  line-height: 1.75;
+}
+.small-note strong { color: var(--dark); }
+
+
+/* ═══════════════════════════════════════
+   TEAM
+═══════════════════════════════════════ */
+.team-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: clamp(24px, 3.5vw, 40px);
+}
+.team-card {
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--cream);
+}
+.team-card.planned {
+  background: transparent;
+  border: 1px dashed var(--border);
+}
+.team-role {
+  font-size: clamp(9px, 1.2vw, 10.5px);
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 6px;
+}
+.team-card.planned .team-role { color: var(--light); }
+.team-name {
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 9px;
+  line-height: 1.2;
+}
+.team-bio {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+
+/* ═══════════════════════════════════════
+   TIMELINE
+═══════════════════════════════════════ */
+.timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.timeline-item {
+  padding: clamp(18px, 2.5vw, 26px) clamp(16px, 2vw, 22px);
+  background: var(--cream);
+  border-top: 3px solid var(--orange);
+}
+.tl-period {
+  font-size: clamp(10px, 1.4vw, 13px);
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 8px;
+}
+.tl-text {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--text);
+  line-height: 1.7;
+}
+
+
+/* ═══════════════════════════════════════
+   FLYWHEEL
+═══════════════════════════════════════ */
+.flywheel {
+  margin-top: clamp(28px, 4vw, 48px);
+  background: var(--navy);
+  padding: clamp(20px, 3vw, 32px) clamp(24px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.flywheel-label {
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.flywheel-chain {
+  font-size: clamp(12px, 1.5vw, 14px);
+  color: rgba(255,255,255,.5);
+  line-height: 1.8;
+}
+.flywheel-chain span { color: var(--orange); margin: 0 4px; }
+
+
+/* ═══════════════════════════════════════
+   RISK GRID
+═══════════════════════════════════════ */
+.risk-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-top: clamp(24px, 3.5vw, 40px);
+}
+.risk-item {
+  padding: clamp(16px, 2.5vw, 24px) clamp(18px, 2.5vw, 28px);
+  border-left: 3px solid var(--border);
+  background: #fff;
+}
+.risk-item.ok { border-left-color: var(--orange); }
+.risk-name {
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 700;
+  color: var(--dark);
+  margin-bottom: 6px;
+}
+.risk-mit {
+  font-size: clamp(12px, 1.4vw, 13px);
+  color: var(--muted);
+  line-height: 1.72;
+}
+.risk-mit strong { color: var(--dark); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════
+   EXIT LIST
+═══════════════════════════════════════ */
+.exit-list {
+  list-style: none;
+  border: 1px solid var(--border);
+  margin-top: clamp(28px, 4vw, 48px);
+}
+.exit-item {
+  padding: clamp(16px, 2.5vw, 24px) clamp(20px, 3vw, 32px);
+  border-bottom: 1px solid var(--border);
+}
+.exit-item:last-child { border-bottom: none; }
+.exit-item strong {
+  display: block;
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.exit-item span {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--muted);
+  line-height: 1.72;
+}
+
+
+/* ═══════════════════════════════════════
+   CALLOUT PAIR
+═══════════════════════════════════════ */
+.callout-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-top: clamp(24px, 3.5vw, 40px);
+}
+.callout-pair .callout { margin-top: 0; }
+
+
+/* ═══════════════════════════════════════
+   THESIS BLOCK
+═══════════════════════════════════════ */
+.thesis {
+  margin-top: clamp(28px, 4vw, 48px);
+  padding: clamp(20px, 3vw, 32px);
+  border-top: 2px solid var(--border);
+}
+.thesis p {
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: var(--text);
+  line-height: 1.82;
+}
+.thesis strong { color: var(--dark); font-weight: 600; }
+
+
+/* ═══════════════════════════════════════
+   ZONING
+═══════════════════════════════════════ */
+.zoning-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3px;
+  margin-top: 18px;
+}
+.zone-item {
+  padding: clamp(14px, 2vw, 20px) clamp(16px, 2.5vw, 24px);
+  background: #fff;
+}
+.zone-opt {
+  font-size: clamp(9px, 1.2vw, 11px);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .14em;
+  color: var(--orange);
+  margin-bottom: 5px;
+}
+.zone-text {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--dark);
+}
+
+
+/* ═══════════════════════════════════════
+   STRUCTURAL ADVANTAGES
+═══════════════════════════════════════ */
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: clamp(24px, 3.5vw, 40px);
+}
+.adv-item {
+  padding: clamp(20px, 3vw, 32px);
+  background: var(--cream);
+  border-top: 3px solid var(--orange);
+}
+.adv-name {
+  font-size: clamp(14px, 1.8vw, 17px);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.adv-text {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: var(--muted);
+  line-height: 1.78;
+}
+
+
+/* ═══════════════════════════════════════
+   VISION (dark)
+═══════════════════════════════════════ */
+.vision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  margin-top: clamp(36px, 5vw, 64px);
+}
+.vision-phase {
+  padding: clamp(24px, 3.5vw, 40px) clamp(20px, 3vw, 32px);
+  background: rgba(255,255,255,.04);
+  border-top: 2px solid rgba(255,255,255,.08);
+}
+.vision-phase.accent {
+  background: rgba(255,255,255,.08);
+  border-top-color: var(--orange);
+}
+.vision-when {
+  font-size: clamp(9px, 1.3vw, 11px);
+  font-weight: 700;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+.vision-title {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+.vision-text {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: rgba(255,255,255,.48);
+  line-height: 1.82;
+}
+.vision-callout {
+  margin-top: clamp(28px, 4vw, 48px);
+  padding: clamp(20px, 3vw, 32px);
+  border-left: 3px solid var(--orange);
+  background: rgba(255,255,255,.04);
+}
+.vision-callout-title {
+  font-size: clamp(13px, 1.6vw, 15px);
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.vision-callout-body {
+  font-size: clamp(12px, 1.4vw, 14px);
+  color: rgba(255,255,255,.48);
+  line-height: 1.82;
+}
+
+
+/* ═══════════════════════════════════════
+   CLOSING
+═══════════════════════════════════════ */
+.closing-img {
+  height: clamp(260px, 40vw, 540px);
+  overflow: hidden;
+  position: relative;
+}
+.closing-img img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+}
+.closing-img-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 20%, rgba(0,0,0,.72) 100%);
+}
+.closing-body {
+  padding: clamp(48px, 8vw, 108px) 0 clamp(56px, 9vw, 128px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.closing-logo {
+  height: clamp(36px, 4.5vw, 48px);
+  opacity: .6;
+  margin-bottom: clamp(28px, 4vw, 44px);
+}
+.closing-h1 {
+  font-size: clamp(2rem, 5vw, 4rem);
+  font-weight: 400;
+  color: var(--dark);
+  letter-spacing: -0.02em;
+  margin-bottom: clamp(24px, 3.5vw, 40px);
+}
+.closing-contact {
+  font-size: clamp(13px, 1.8vw, 16px);
+  color: var(--muted);
+  line-height: 2.4;
+}
+.closing-contact strong {
+  display: block;
+  font-size: clamp(15px, 2vw, 19px);
+  font-weight: 600;
+  color: var(--dark);
+  margin-bottom: 4px;
+}
+.closing-links {
+  margin-top: 20px;
+  font-size: clamp(11px, 1.5vw, 13px);
+  color: var(--light);
+  letter-spacing: .08em;
+}
+.closing-tagline {
+  margin-top: clamp(40px, 6vw, 72px);
+  font-size: clamp(1.4rem, 4.5vw, 3.6rem);
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(0,0,0,.07);
+  white-space: nowrap;
+}
+
+
+/* ═══════════════════════════════════════
+   FOOTER BAR
+═══════════════════════════════════════ */
+.conf-bar {
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+.conf-bar .wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.conf-bar span {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--light);
+}
+
+
+/* ─── LANG SWITCH ───────────────────────── */
+.lang-switch {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 9000;
+  display: flex;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 4px;
+  overflow: hidden;
+  background: rgba(20,20,20,.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 12px rgba(0,0,0,.18);
+}
+.lang-switch a {
+  padding: 6px 11px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,.4);
+  font-family: 'Raleway', sans-serif;
+}
+.lang-switch a.active {
+  color: #fff;
+  background: rgba(255,255,255,.12);
+}
+.lang-switch a:hover:not(.active) { color: rgba(255,255,255,.72); }
+.lang-switch-sep {
+  width: 1px;
+  background: rgba(255,255,255,.18);
+  flex-shrink: 0;
+}
+
+
+/* ═══════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════ */
+@media (max-width: 900px) {
+  .intro-grid    { grid-template-columns: 1fr; gap: 28px; }
+  .prop-inner    { grid-template-columns: 1fr; gap: 40px; }
+  .prop-sep      { display: none; }
+  .scenarios     { grid-template-columns: 1fr; gap: 4px; }
+  .adv-grid      { grid-template-columns: 1fr 1fr; }
+  .vision-grid   { grid-template-columns: 1fr; gap: 4px; }
+  .zoning-grid   { grid-template-columns: 1fr; gap: 3px; }
+  .callout-pair  { grid-template-columns: 1fr; }
+  .photo-grid-3  { height: clamp(160px, 32vw, 300px); }
+  .clean-table   { font-size: 13px; }
+}
+
+@media (max-width: 640px) {
+  .traction-grid { grid-template-columns: repeat(2, 1fr); }
+  .traction-item:nth-child(2) { border-right: none; }
+  .traction-item:nth-child(3) { border-top: 1px solid var(--border); border-right: 1px solid var(--border); }
+  .traction-item:nth-child(4) { border-top: 1px solid var(--border); }
+  .asset-list    { grid-template-columns: 1fr; }
+  .team-grid     { grid-template-columns: 1fr; }
+  .timeline      { grid-template-columns: 1fr 1fr; }
+  .risk-grid     { grid-template-columns: 1fr; }
+  .adv-grid      { grid-template-columns: 1fr; }
+  .two-col       { grid-template-columns: 1fr; }
+  .photo-grid-4  { grid-template-columns: repeat(2, 1fr); }
+  .photo-grid-4 img { height: clamp(120px, 28vw, 200px); }
+  .photo-grid-3  { grid-template-columns: 1fr 1fr; }
+  .photo-grid-3 img:last-child { display: none; }
+  .hero-num-big  { font-size: clamp(1.1rem, 5vw, 1.5rem); }
+}
+
+</style>
+</head>
+<body>
+
+<div class="lang-switch">
+  <a href="spiral_park_deck_v3.html">EN</a>
+  <div class="lang-switch-sep"></div>
+  <a href="spiral_park_deck_v3_ru.html" class="active">RU</a>
+</div>
+
+
+<!-- ════ HERO ════════════════════════════════════════════ -->
+<section class="hero">
+  <img class="hero-img" src="pich/IMG_2997.jpg" alt="Spiral Park — Мадейра">
+  <div class="hero-overlay"></div>
+  <div class="hero-body">
+    <img class="hero-logo" src="lgsp.png" alt="Spiral Park">
+    <p class="hero-eyebrow">Инвестиционный обзор &nbsp;·&nbsp; Март 2026</p>
+    <h1 class="hero-title">Частная природная резиденция<br>иммерсивного опыта<br>на Мадейре</h1>
+    <p class="hero-sub">Концептуальное гостеприимство · Лаборатория нового качества человеческого опыта</p>
+  </div>
+  <div class="hero-nums">
+    <div class="hero-num">
+      <div class="hero-num-big">1,2М €</div>
+      <div class="hero-num-lbl">Инвестиции</div>
+    </div>
+    <div class="hero-num">
+      <div class="hero-num-big">2,4 га</div>
+      <div class="hero-num-lbl">Собственная земля</div>
+    </div>
+    <div class="hero-num">
+      <div class="hero-num-big">~483K €</div>
+      <div class="hero-num-lbl">Потенциал выручки</div>
+    </div>
+    <div class="hero-num">
+      <div class="hero-num-big">Live Venue</div>
+      <div class="hero-num-lbl">Статус</div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ════ WHY MADEIRA ══════════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="intro-grid">
+      <div>
+        <div class="label">Остров · Момент</div>
+        <p class="sec-lead">Мадейра созрела. Мы тоже.</p>
+      </div>
+      <div>
+        <p style="font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 400; color: var(--muted); line-height: 1.88;">Круглогодичное тепло, прямые рейсы из 30+ городов Европы, мягкая налоговая среда Португалии — Мадейра стремительно становится точкой притяжения для тех, кто ищет глубокий опыт за пределами привычных Бали и Ибицы. Качественных площадок здесь почти нет. Spiral Park — 2,4 га собственного леса на склоне над океаном, 15 минут от центра Фуншала, 18 минут от аэропорта — уже принимает гостей, которые прилетают сюда ради наших событий.</p>
+        <p style="font-size: clamp(1rem, 2vw, 1.2rem); font-weight: 400; color: var(--muted); line-height: 1.88; margin-top: 12px;">Мадейра быстро становится направлением для experiential-туризма, удалённых сообществ и велнес-путешествий. Это создаёт растущий спрос на уникальные площадки и культурные пространства за пределами традиционных отелей.</p>
+        <ul class="bullet-list">
+          <li>Выручка без единого евро на маркетинг, 65% гостей возвращаются</li>
+          <li>Растущая международная аудитория — люди прилетают на Мадейру ради Spiral</li>
+          <li>Права на туристическое строительство подтверждены</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ PHOTO GRID 3 ══════════════════════════════════ -->
+<div class="photo-grid-3">
+  <img src="pich/IMG_3045.jpg" alt="Мадейра утром" style="object-position: center 40%;">
+  <img src="pich/IMG_F3B8FCF614FC-5.jpeg" alt="Жизнь Spiral Park" style="object-position: center 50%;">
+  <img src="pich/IMG_3034.jpg" alt="Мадейра ночью" style="object-position: center 50%;">
+</div>
+
+
+<!-- ════ WHAT EXISTS ══════════════════════════════════════ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="label">Что уже есть</div>
+    <p class="sec-lead">Фундамент создан. Аудитория здесь.</p>
+    <ul class="asset-list">
+      <li class="asset-item">
+        <strong>Собственная земля и объекты</strong>
+        <span>2,4 га в полной собственности. Дом, церемониальная баня, площадка для летних ивентов, лес, ручей, фруктовые деревья. Оценочная стоимость ~1,3М €</span>
+      </li>
+      <li class="asset-item">
+        <strong>Живая площадка</strong>
+        <span>Еженедельные церемонии, культурные вечера, полудневные ретриты. 12+ месяцев без маркетинга</span>
+      </li>
+      <li class="asset-item">
+        <strong>Подтверждённая аудитория</strong>
+        <span>400+ человек в сообществе. Международные гости прилетают на Мадейру ради событий Spiral</span>
+      </li>
+      <li class="asset-item">
+        <strong>Каменный резервуар — основа будущего The Egg</strong>
+        <span>Исторический каменный резервуар на участке уже существует — вулканические стены, природная акустика, вода. Именно он станет The Egg — церемониальным звуковым пространством, сердцем Spiral Park. Сам The Egg пока не достроен: его создание — главная цель текущего раунда инвестиций. После запуска он станет центральной площадкой для ретритов, церемоний и событий, генерирующей основную часть выручки парка.</span>
+      </li>
+      <li class="asset-item">
+        <strong>Авторские форматы и бренд</strong>
+        <span>Silent Flow, звуковые церемонии, парковые инсталляции. Собственные форматы с растущей узнаваемостью на Мадейре и за её пределами</span>
+      </li>
+      <li class="asset-item">
+        <strong>Прайм-локация</strong>
+        <span>В Фуншале · 15 мин от центра · 10 мин побережье. Права на туристическое строительство подтверждены</span>
+      </li>
+    </ul>
+  </div>
+</section>
+
+
+<!-- ════ THE PROPOSITION (dark) ══════════════════════════ -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="label">Предложение</div>
+    <div class="prop-inner">
+      <div>
+        <div class="prop-numbers">
+          <div>
+            <div class="prop-num-big">1,2М €</div>
+            <div class="prop-num-lbl">инвестиция за до 30% доли в зависимости от финальной структуры сделки</div>
+          </div>
+          <div>
+            <div class="prop-num-big" style="font-size: clamp(1.4rem, 3.2vw, 2.6rem);">2,8М</div>
+            <div class="prop-num-lbl">Pre-money €</div>
+          </div>
+          <div>
+            <div class="prop-num-big" style="font-size: clamp(1.4rem, 3.2vw, 2.6rem);">4,0М</div>
+            <div class="prop-num-lbl">Post-money €</div>
+          </div>
+        </div>
+        <p class="prop-text">Редкий актив с душой. Площадка с доказанным спросом и бренд, у которого уже есть аудитория.</p>
+        <p class="prop-text">Оценка базируется на четырёх опорах: дефицитный земельный актив (пол 1,0–1,2М €), доказанный трекшн без маркетинговых затрат, устоявшийся бренд и сообщество, а также чёткий путь к выручке 400–650К € в год при марже EBITDA ~45%.</p>
+        <p class="prop-text" style="color: var(--muted); font-size: clamp(13px, 1.4vw, 14px);">Сопоставимые бутик-объекты торгуются в диапазоне 8–14× EBITDA — эта оценка уверенно вписывается в коридор, при этом предлагая асимметричный апсайд через рост стоимости земли и расширение бренда.</p>
+      </div>
+      <div class="prop-sep"></div>
+      <div>
+        <div class="funds-label">Использование средств</div>
+        <ul class="funds-list">
+          <li><span class="fund-amt">500К</span> &nbsp;Консолидация 100% контроля над активом — критический шаг для запуска долгосрочного мастер-плана развития. Инвестиция консолидирует полный контроль над земельным активом, обеспечивая безопасность вложений и свободу масштабирования Spiral Park как единой площадки</li>
+          <li><span class="fund-amt">500К</span> &nbsp;Строительство — The Egg, чайный дом, ретрит-пространства, банный комплекс, ландшафт, размещение</li>
+          <li><span class="fund-amt">200К</span> &nbsp;Команда и запуск — опер. менеджер, мастера, система бронирования, маркетинг, 12 месяцев до безубыточности</li>
+        </ul>
+        <div style="margin-top: 32px;">
+          <div class="funds-label">Доход инвестора</div>
+          <ul class="funds-list">
+            <li>Дивиденды из операционного денежного потока, начиная с 2–3 года (пропорциональная доля операционной прибыли)</li>
+            <li>Опциональный механизм защиты капитала (Year 4–5):<br>Выкуп основателем по заранее согласованной премии, через рефинансирование актива или стратегический выход.<br>Право инвестора, не обязательство.</li>
+            <li>Рост стоимости земли: гостиничная недвижимость Мадейры +8–12% в год — твёрдый пол под инвестицией</li>
+            <li>Дополнительные пути выхода: стратегическая продажа, структурированное рефинансирование или долгосрочное владение с растущими дивидендами</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ ТРИ УРОВНЯ ЦЕННОСТИ ══════════════════════════════ -->
+<section class="section" style="background: var(--navy); color: #fff;">
+  <div class="wrap">
+    <div class="label" style="color: rgba(255,255,255,.45);">Как это устроено</div>
+    <h2 class="sec-title" style="color: #fff;">Три уровня ценности</h2>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: clamp(16px, 3vw, 28px); margin-top: clamp(36px, 6vw, 64px);">
+      <div style="padding: clamp(24px, 4vw, 36px); background: rgba(255,255,255,.06); border-radius: 6px; border-top: 3px solid var(--orange);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px;">Уровень 1</div>
+        <div style="font-size: clamp(1.1rem, 2.4vw, 1.5rem); font-weight: 700; color: #fff; margin-bottom: 8px;">Защита от потерь — Земельный актив</div>
+        <div style="font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 700; color: var(--orange); margin-bottom: 14px; line-height: 1.25;">1,0–1,2М €</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,.62); line-height: 1.75; margin: 0;">Собственный лесной склон в Фуншале стоимостью 1,0–1,2М €. Дефицитная земля с правами на туристическое строительство рядом со столицей Мадейры. Этот актив сам по себе составляет примерно 30–35% от post-money оценки компании.</p>
+      </div>
+      <div style="padding: clamp(24px, 4vw, 36px); background: rgba(255,255,255,.06); border-radius: 6px; border-top: 3px solid var(--orange);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px;">Уровень 2</div>
+        <div style="font-size: clamp(1.1rem, 2.4vw, 1.5rem); font-weight: 700; color: #fff; margin-bottom: 8px;">Денежный поток — Операционный бизнес</div>
+        <div style="font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 700; color: var(--orange); margin-bottom: 14px; line-height: 1.25;">500–650К €</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,.62); line-height: 1.75; margin: 0;">Целевая выручка 500–650К € в год с маржой EBITDA ~45%. Мероприятия, ретриты, банные церемонии и проживание формируют регулярный поток дохода с относительно низкими постоянными затратами.</p>
+      </div>
+      <div style="padding: clamp(24px, 4vw, 36px); background: rgba(255,255,255,.06); border-radius: 6px; border-top: 3px solid var(--orange);">
+        <div style="font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--orange); margin-bottom: 14px;">Уровень 3</div>
+        <div style="font-size: clamp(1.1rem, 2.4vw, 1.5rem); font-weight: 700; color: #fff; margin-bottom: 8px;">Асимметричный апсайд — развитие и бренд</div>
+        <div style="font-size: clamp(1.2rem, 2.4vw, 1.6rem); font-weight: 700; color: var(--orange); margin-bottom: 14px; line-height: 1.25;">Не заложен в оценку</div>
+        <p style="font-size: 14px; color: rgba(255,255,255,.62); line-height: 1.75; margin: 0;">Потенциальное изменение статуса (PDM 2026) на urban* и долгосрочное расширение бренда на будущие локации. Этот апсайд не включён в текущую оценку.</p>
+      </div>
+    </div>
+    <p style="margin-top: clamp(20px, 3vw, 32px); font-size: clamp(11px, 1.3vw, 13px); color: rgba(255,255,255,.45); line-height: 1.75;">*Земля сейчас классифицируется как Espaços Urbanos de Expansão (зона расширения). Обновление PDM 2026 с высокой вероятностью повысит статус до полноценной городской зоны — увеличив допустимую застройку и создав скачок в стоимости земли, независимо от операционных результатов.</p>
+  </div>
+</section>
+
+
+<!-- ════ PHOTO BREAK ══════════════════════════════════════ -->
+<div class="photo-break aerial">
+  <img src="pich/DJI_0027.JPG" alt="Аэросъёмка — Spiral Park" style="object-position: center 45%;">
+</div>
+
+
+<!-- ════ TRACTION DETAIL ══════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="label">Трекшн · Доказательство спроса</div>
+    <h2 class="sec-title">Выручка без маркетинга,<br>персонала и системы бронирования</h2>
+    <div class="two-col">
+      <div>
+        <div class="label">Программирование</div>
+        <ul class="simple-list">
+          <li>6–8 церемоний в месяц при загрузке ~85%</li>
+          <li>50–80 гостей на ежемесячных музыкальных и культурных событиях; 12+ месяцев без перерыва</li>
+          <li>65% повторных посещений в течение 90 дней — лояльность без затрат на удержание</li>
+          <li>Полудневные премиальные форматы запущены и приносят первую выручку</li>
+        </ul>
+      </div>
+      <div>
+        <div class="label">Аудитория и охват</div>
+        <ul class="simple-list">
+          <li>Telegram: 400+ активных подписчиков; Instagram: 2 000+ органических подписчиков</li>
+          <li>Ноль платной рекламы — весь рост органический и сарафанный</li>
+          <li>30%+ гостей — международные; ряд из них специально приехали на Мадейру ради Spiral</li>
+          <li>Органический UGC на каждом событии; растущее присутствие на YouTube</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout">
+      <div class="callout-body" style="font-size: clamp(1rem, 2vw, 1.2rem); color: var(--dark);">Вложения в инфраструктуру, легализация и коммерческий запуск — команда, маркетинг — открывает следующий уровень.</div>
+    </div>
+  </div>
+</section>
+
+<div class="photo-grid-4">
+  <img src="pich/IMG_F551341BECFB-3.jpeg" alt="Событие сообщества" style="object-position: center 40%;">
+  <img src="pich/IMG_F551341BECFB-5.jpeg" alt="Медитация" style="object-position: center 50%;">
+  <img src="pich/IMG_F551341BECFB-1.jpeg" alt="Уютный интерьер" style="object-position: center 50%;">
+  <img src="pich/IMG_F3B8FCF614FC-6.jpeg" alt="Пространство для мероприятий" style="object-position: center 50%;">
+</div>
+
+
+<!-- ════ ECONOMICS ════════════════════════════════════════ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="label">Бизнес-модель</div>
+    <h2 class="sec-title">Потоки выручки</h2>
+    <div class="table-wrap">
+      <table class="clean-table">
+        <thead>
+          <tr>
+            <th>Источник выручки</th>
+            <th>Цена за единицу</th>
+            <th>Объём / год</th>
+            <th>Годовая выручка</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>The Egg — Мероприятия <span style="font-size:11px; color:var(--muted);">· аренда фасилитаторам + билеты</span></td>
+            <td>150 € аренда / 25 € билет</td>
+            <td>6 аренд фасилитаторам / нед · 3 мероприятия Spiral / нед · 1 ретрит-интеграция</td>
+            <td>≈ 163 000 €</td>
+          </tr>
+          <tr>
+            <td>Ретриты <span style="font-size:11px; color:var(--muted);">· The Egg + сауна + чайный дом</span></td>
+            <td>230 € / чел</td>
+            <td>2 / мес · 10 человек</td>
+            <td>≈ 55 000 €</td>
+          </tr>
+          <tr>
+            <td>Банные церемонии</td>
+            <td>600 € / церемония</td>
+            <td>2 / неделя</td>
+            <td>≈ 62 000 €</td>
+          </tr>
+          <tr>
+            <td>Размещение <span style="font-size:11px; color:var(--muted);">· 3 природных юнита · загрузка 60%</span></td>
+            <td>230 € / ночь</td>
+            <td>3 юнита · загрузка 60%</td>
+            <td>≈ 151 000 €</td>
+          </tr>
+          <tr>
+            <td>Фестивали</td>
+            <td>60 € / билет</td>
+            <td>3 / год · 150 гостей</td>
+            <td>≈ 27 000 €</td>
+          </tr>
+          <tr>
+            <td>Велнес и бодиворк <span style="font-size:11px; color:var(--muted);">· независимые практики</span></td>
+            <td>revenue share</td>
+            <td>—</td>
+            <td>≈ 25 000 €</td>
+          </tr>
+          <tr class="total">
+            <td>Итого (стабилизированные операции)</td>
+            <td></td>
+            <td></td>
+            <td class="orange">≈ 483 000 € / год</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div style="margin-top: clamp(36px, 5vw, 56px); padding: clamp(20px, 3vw, 32px) clamp(24px, 4vw, 36px); background: var(--cream); border-left: 3px solid var(--orange); border-radius: 2px;">
+      <div class="label" style="margin-bottom: 10px;">Дополнительный поток выручки · Корпоративные офсайты</div>
+      <p style="font-size: clamp(13px, 1.5vw, 15px); color: var(--text); line-height: 1.82; margin: 0;"><strong style="color: var(--dark);">Корпоративные велнес-офсайты</strong> — однодневный формат для 10–15 человек по 4–6К € за событие. Один в месяц — ≈ 60К €/год сверх базовой модели. Аудитория: удалённые IT- и креативные команды на Мадейре. Инфраструктура готова, капитал не нужен.</p>
+    </div>
+
+    <div style="margin-top: clamp(20px, 3vw, 32px); padding: clamp(20px, 3vw, 32px) clamp(24px, 4vw, 36px); background: var(--cream); border-left: 3px solid var(--orange); border-radius: 2px;">
+      <div class="label" style="margin-bottom: 10px;">Будущий регулярный доход</div>
+      <p style="font-size: clamp(13px, 1.5vw, 15px); color: var(--text); line-height: 1.82; margin: 0;"><strong style="color: var(--dark);">Программы membership / patron circle</strong> — приоритетный доступ к событиям, закрытым встречам и ретритам. Этот источник регулярной выручки не включён в базовую финансовую модель и представляет дополнительный upside.</p>
+    </div>
+
+    <div style="margin-top: clamp(48px, 7vw, 80px);">
+      <div class="label">Сценарии выручки и EBITDA</div>
+      <p style="font-size: clamp(13px, 1.5vw, 15px); color: var(--muted); line-height: 1.82; max-width: 780px;">Бизнес-модель выше отражает стабилизированные операции. Три сценария ниже показывают, как выручка и EBITDA масштабируются с 1-го по 3-й год в зависимости от глубины программирования, загрузки размещения и освоения корпоративных офсайтов.</p>
+    </div>
+    <div class="scenarios">
+      <div class="scenario">
+        <div class="scenario-name">Стабилизированный базовый сценарий</div>
+        <div class="scenario-rev">420К €</div>
+        <div class="scenario-period">/ год</div>
+        <ul class="scenario-rows">
+          <li><strong>EBITDA</strong> ≈ 190 000 € / год</li>
+          <li><strong>Безубыточность</strong> в течение 12–15 месяцев</li>
+          <li><strong>Драйверы</strong> Запуск инфраструктуры, наращивание программ, частичное размещение</li>
+        </ul>
+      </div>
+      <div class="scenario highlighted">
+        <div class="scenario-name">Целевой сценарий</div>
+        <div class="scenario-rev">640К €</div>
+        <div class="scenario-period">/ год · Год 2–3</div>
+        <ul class="scenario-rows">
+          <li><strong>EBITDA</strong> ≈ 290 000 € / год</li>
+          <li><strong>Безубыточность</strong> в течение 12–15 месяцев</li>
+          <li><strong>Драйверы</strong> Стабильный календарь, частота ретритов, рост загрузки размещения</li>
+        </ul>
+      </div>
+      <div class="scenario">
+        <div class="scenario-name">Оптимистичный сценарий</div>
+        <div class="scenario-rev">800К €</div>
+        <div class="scenario-period">/ год</div>
+        <ul class="scenario-rows">
+          <li><strong>EBITDA</strong> ≈ 360 000 € / год</li>
+          <li><strong>Безубыточность</strong> в течение 12–15 месяцев</li>
+          <li><strong>Драйверы</strong> Расширенные программы, корпоративные офсайты, полная загрузка размещения</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ PHOTO BREAK ══════════════════════════════════════ -->
+<div class="photo-break">
+  <img src="pich/IMG_7362.jpg" alt="Лес Spiral Park" style="object-position: center 45%;">
+</div>
+
+
+<!-- ════ TEAM & ROADMAP ═══════════════════════════════════ -->
+<section class="section">
+  <div class="wrap">
+    <div class="label">Команда</div>
+    <h2 class="sec-title">Команда</h2>
+    <div class="team-grid">
+      <div class="team-card">
+        <div class="team-role">Основатель и арт-директор · Действующий</div>
+        <div class="team-name">Руслан Трубчик</div>
+        <div class="team-bio">Создал Spiral Park с нуля. Ранее уже инициировал коллективную покупку недвижимости в Португалии (<a href="https://doma.pt" target="_blank" style="color: inherit; text-decoration: underline; text-underline-offset: 3px;">doma.pt</a>). Проект развивается самостоятельно.</div>
+      </div>
+      <div class="team-card planned">
+        <div class="team-role">Операционный менеджер · Найм М1–3</div>
+        <div class="team-name">Дарья Мазалова</div>
+        <div class="team-bio">Команды 100+ человек в EdTech. Роль: ежедневное управление площадкой, бронирования, подрядчики, гостевой опыт.</div>
+      </div>
+      <div class="team-card planned">
+        <div class="team-role">Мастера и команда церемоний · Действующие</div>
+        <div class="team-name">Существующее сообщество</div>
+        <div class="team-bio">Команда мастеров банных церемоний, ведущих чайных церемоний, массажистов и других мастеров уже является частью сообщества Spiral. Готовы масштабироваться до 4–5 церемоний в неделю.</div>
+      </div>
+      <div class="team-card planned">
+        <div class="team-role">Консультативный совет</div>
+        <div class="team-name">Консультанты</div>
+        <div class="team-bio">Юрист, местная строительная компания, налаженные связи с муниципалитетом.</div>
+      </div>
+    </div>
+
+    <div style="margin-top: clamp(48px, 7vw, 80px);">
+      <div class="label">Дорожная карта на 12 месяцев</div>
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="tl-period">М 1–3</div>
+        <div class="tl-text"><strong style="color: var(--dark); display: block; margin-bottom: 6px;">Консолидация собственности и коммерческая подготовка</strong>Выкуп партнёра завершён — 100% земли в собственности. Банковская и юридическая структура стабилизирована. CreatorsQuinta LDA подготовлена для инвестиций и операций. Инфраструктура бронирования и оплаты активирована.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-period">М 4–6</div>
+        <div class="tl-text"><strong style="color: var(--dark); display: block; margin-bottom: 6px;">Активация основного актива</strong>The Egg завершён и полностью операционен. Банный комплекс модернизирован до коммерческого уровня. Чайный дом и гостевая инфраструктура готовы. Регулярное публичное и hosted-программирование запущено — площадка работает.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-period">М 7–9</div>
+        <div class="tl-text"><strong style="color: var(--dark); display: block; margin-bottom: 6px;">Расширение выручки</strong>Мягкий запуск размещения. Hosted-фасилитаторы и внешняя аренда активны. Ретриты и премиальные форматы интегрированы в еженедельный календарь. Первые корпоративные офсайты проведены.</div>
+      </div>
+      <div class="timeline-item">
+        <div class="tl-period">М 10–12</div>
+        <div class="tl-text"><strong style="color: var(--dark); display: block; margin-bottom: 6px;">Стабилизация</strong>Регулярный календарь программ стабилизирован. Загрузка размещения растёт к целевой. Операционные системы и команда полностью на месте. Путь к стабилизированной выручке очевиден.</div>
+      </div>
+    </div>
+
+    <div class="flywheel">
+      <div class="flywheel-label">Маховик роста</div>
+      <div class="flywheel-chain">
+        Живые события и форматы <span>→</span> Органический контент <span>→</span> Растущая аудитория <span>→</span> Прямые бронирования <span>→</span> Расширение программы <span>↻</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ PEOPLE GRID ════════════════════════════════════════ -->
+<div class="photo-grid-3 people">
+  <img src="images/about/p01.png" alt="Сообщество Spiral Park" style="object-position: center 28%;">
+  <img src="images/about/p03.png" alt="Сообщество Spiral Park" style="object-position: center 30%;">
+  <img src="images/about/igor.jpg" alt="Сообщество Spiral Park" style="object-position: center 25%;">
+</div>
+
+
+<!-- ════ RISK & EXIT ══════════════════════════════════════ -->
+<section class="section cream">
+  <div class="wrap">
+    <div class="label">Управление рисками</div>
+    <h2 class="sec-title">Риски и как мы их закрываем</h2>
+    <div class="risk-grid">
+      <div class="risk-item ok">
+        <div class="risk-name">Португальская бюрократия</div>
+        <div class="risk-mit"><strong>Риск:</strong> Задержки с легализацией. <strong>Митигация:</strong> Запланированные инфраструктурные изменения для создания операционной прибыли не требуют разрешений.</div>
+      </div>
+      <div class="risk-item ok">
+        <div class="risk-name">Зависимость от основателя</div>
+        <div class="risk-mit"><strong>Риск:</strong> Пока проект лидирует основатель. <strong>Митигация:</strong> Spiral Park — это уже сложившаяся платформа: твёрдый актив + локальное сообщество мастеров. События уже проходят с внешними ведущими. Основатель остаётся творческим катализатором, но не единственным носителем ценности проекта.</div>
+      </div>
+      <div class="risk-item ok">
+        <div class="risk-name">Концентрация спроса</div>
+        <div class="risk-mit"><strong>Риск:</strong> Аудитория пока из сарафана. <strong>Митигация:</strong> После запуска: локальный, международный, контент-канал, корпоративы. Нет зависимости от одного источника.</div>
+      </div>
+      <div class="risk-item ok">
+        <div class="risk-name">Перерасход на строительство</div>
+        <div class="risk-mit"><strong>Риск:</strong> Выход за бюджет. <strong>Митигация:</strong> Поэтапная стройка (The Egg первым). Фиксированные контракты. Резерв 15%. Размещение опционально — не нужно для безубыточности.</div>
+      </div>
+      <div class="risk-item ok">
+        <div class="risk-name">Сезонность</div>
+        <div class="risk-mit"><strong>Риск:</strong> Погода. <strong>Митигация:</strong> Мадейра — круглогодичный климат. The Egg — крытое пространство. Корпоративы закрывают межсезонье.</div>
+      </div>
+      <div class="risk-item ok">
+        <div class="risk-name">Конкурентный вход</div>
+        <div class="risk-mit"><strong>Риск:</strong> Новые конкуренты. <strong>Митигация:</strong> Никого в 30 мин от Фуншала. Земли нет. Форматы, бренд и сообщество нарастают со временем.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="photo-grid-3 people">
+  <img src="images/about/IMG_7006.jpg" alt="Spiral Park" style="object-position: center 30%;">
+  <img src="images/about/p04.png" alt="Spiral Park" style="object-position: center 30%;">
+  <img src="images/about/IMG_7016.jpg" alt="Spiral Park" style="object-position: center 35%;">
+</div>
+
+<section class="section cream">
+  <div class="wrap">
+    <div style="margin-top: clamp(48px, 7vw, 80px);">
+      <div class="label">Стратегии выхода</div>
+      <div class="exit-list">
+        <div class="exit-item">
+          <strong>Выкуп основателем (3–5 год)</strong>
+          <span>Формула при закрытии: 2× на 3-й год, снижается до 1,5× к 5-му. Право инвестора, не обязательство.</span>
+        </div>
+        <div class="exit-item">
+          <strong>Продажа гостиничному оператору</strong>
+          <span>Продажа велнес-группе, бутик-оператору или девелоперу на Мадейре. Земля задаёт пол; трек-рекорд добавляет мультипликатор.</span>
+        </div>
+        <div class="exit-item">
+          <strong>Структурированное рефинансирование</strong>
+          <span>Рефинансирование под актив на 2–3 год. Частичная ликвидность инвестору, компания продолжает работать.</span>
+        </div>
+        <div class="exit-item">
+          <strong>Долгосрочное удержание с доходом</strong>
+          <span>Долю можно держать, получая выплаты. Без обязательного выхода. Для тех, кому важен кэшфлоу.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ════ PHOTO GRID BEFORE VISION ═════════════════════════ -->
+<div class="photo-grid-4">
+  <img src="images/about/469881419_597635286254375_9065095185094829540_n.jpg" alt="Spiral Park" style="object-position: center 50%;">
+  <img src="images/about/469892972_597635306254373_4729160839797960049_n.jpg" alt="Spiral Park" style="object-position: center 50%;">
+  <img src="images/about/469967112_597635316254372_3326139253487336375_n.jpg" alt="Spiral Park" style="object-position: center 50%;">
+  <img src="images/about/469969829_597635282921042_8547950903870390415_n.jpg" alt="Spiral Park" style="object-position: center 50%;">
+</div>
+
+
+<!-- ════ VISION (dark) ═══════════════════════════════════ -->
+<section class="section dark">
+  <div class="wrap">
+    <div class="label">Долгосрочное видение</div>
+    <h2 class="sec-title">Spiral Park через 10 лет</h2>
+    <p class="sec-lead">Не обещание. Траектория — каждый этап растёт из того, что уже есть.</p>
+    <div class="vision-grid">
+      <div class="vision-phase">
+        <div class="vision-when">Сегодня</div>
+        <div class="vision-title">Живой прототип</div>
+        <div class="vision-text">Лесной склон, еженедельные церемонии, культурные события, лояльное сообщество. Доказанный спрос, органический рост, минимальные расходы.</div>
+      </div>
+      <div class="vision-phase accent">
+        <div class="vision-when">5 лет</div>
+        <div class="vision-title">Культовый бренд</div>
+        <div class="vision-text">Иммерсивные программы, размещение на территории, международная аудитория. Имя, которое ассоциируется с Мадейрой. Место, ради которого летят на остров.</div>
+      </div>
+      <div class="vision-phase">
+        <div class="vision-when">10 лет</div>
+        <div class="vision-title">Легендарное место. Глобальный формат.</div>
+        <div class="vision-text">Новые локации Spiral через партнёрства и лицензированные форматы. Интеграция с DOMA и близкими по духу проектами. Концепция масштабируется по миру — без масштабирования капитала.</div>
+      </div>
+    </div>
+    <div class="vision-callout">
+      <div class="vision-callout-title">Укоренён в земле. Движим опытом.</div>
+      <div class="vision-callout-body">Земля задаёт пол. Культура и мероприятия — двигают рост. Каждый этап аддитивен и капиталоэффективен.</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ CLOSING ══════════════════════════════════════════ -->
+<div class="closing-img">
+  <img src="images/about/ChatGPT Image 4 апр. 2025 г., 17_30_08.png" alt="Spiral Park">
+  <div class="closing-img-overlay" style="display:flex; align-items:flex-end; padding: clamp(20px, 3vw, 40px) clamp(24px, 5vw, 60px); line-height:1.5;">
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:clamp(12px, 2vw, 20px); width:100%;">
+      <div style="border-left:3px solid var(--orange); padding: clamp(14px, 2vw, 20px) clamp(16px, 2.5vw, 24px); background:rgba(255,255,255,0.08); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-radius:2px;">
+        <div style="font-size:clamp(13px, 1.5vw, 15px); font-weight:700; color:#fff; margin-bottom:6px;">Самодостаточная инфраструктура</div>
+        <div style="font-size:clamp(11px, 1.3vw, 13px); color:rgba(255,255,255,0.72); line-height:1.72;">Собственный источник воды, фруктовые деревья, лесная экосистема. Регенеративное землепользование усиливает долгосрочную ценность.</div>
+      </div>
+      <div style="border-left:3px solid var(--orange); padding: clamp(14px, 2vw, 20px) clamp(16px, 2.5vw, 24px); background:rgba(255,255,255,0.08); backdrop-filter:blur(8px); -webkit-backdrop-filter:blur(8px); border-radius:2px;">
+        <div style="font-size:clamp(13px, 1.5vw, 15px); font-weight:700; color:#fff; margin-bottom:6px;">Возможности государственного финансирования</div>
+        <div style="font-size:clamp(11px, 1.3vw, 13px); color:rgba(255,255,255,0.72); line-height:1.72;">Доступны португальские и ЕС-гранты: туризм, культура, регенеративное сельское хозяйство. Опциональный потенциал — не в базовой модели.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<section class="section no-border">
+  <div class="wrap">
+    <div class="closing-body">
+      <img class="closing-logo" src="lgsp.png" alt="Spiral Park">
+      <div class="closing-contact">
+        <strong>Руслан Трубчик</strong>
+        rtrubchik@gmail.com<br>
+        +351 910 293 415<br>
+        Telegram: <a href="https://t.me/trubchik" style="color: var(--orange); text-decoration: none;">@trubchik</a>
+      </div>
+      <div class="closing-links">
+        spiralpark.com &nbsp;·&nbsp; @spiral_madeira
+      </div>
+      <p class="closing-tagline">Future is co-created</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ════ FOOTER BAR ══════════════════════════════════════ -->
+<div class="conf-bar">
+  <div class="wrap">
+    <span>Конфиденциально — только для обсуждения</span>
+    <span>Март 2026</span>
+  </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,316 @@
+/* ═══════════════════════════════════════════════
+   silent-flow.html — Silent Flow page styles
+   ═══════════════════════════════════════════════ */
+
+/* ── Scroll animations ── */
+.animate {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.animate.visible {
+  opacity: 1;
+  transform: none;
+}
+.d1 { transition-delay: 0.08s; }
+.d2 { transition-delay: 0.16s; }
+.d3 { transition-delay: 0.24s; }
+@media (prefers-reduced-motion: reduce) {
+  .animate { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+
+/* ═══════════════════════════════════════════════
+   HERO — full-bleed with centered title
+   ═══════════════════════════════════════════════ */
+.sf-hero {
+  position: relative;
+  width: 100%;
+  height: 80vh;
+  min-height: 520px;
+  max-height: 800px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.sf-hero-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 55%;
+}
+.sf-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.50) 0%,
+    rgba(0,0,0,0.30) 50%,
+    rgba(0,0,0,0.70) 100%
+  );
+}
+.sf-hero-text {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  color: #fff;
+  padding: 0 24px;
+}
+.sf-hero-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.55);
+  margin-bottom: 20px;
+}
+.sf-hero-title {
+  font-size: clamp(4rem, 12vw, 9rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1;
+  margin-bottom: 22px;
+}
+.sf-hero-sub {
+  font-size: clamp(1rem, 2.5vw, 1.35rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.80);
+  letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════════
+   SECTION WRAPPERS
+   ═══════════════════════════════════════════════ */
+.sf-section {
+  background: #fff;
+}
+
+/* ═══════════════════════════════════════════════
+   STORY
+   ═══════════════════════════════════════════════ */
+.sf-story {
+  padding-top: 88px;
+  padding-bottom: 0;
+}
+.sf-story-text {
+  max-width: 680px;
+  margin: 0 auto 64px;
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  font-weight: 300;
+  color: #555;
+  line-height: 2;
+  text-align: center;
+}
+
+/* GIF / visualization — centered, max-width constrained */
+.sf-fullbleed {
+  width: 100%;
+  max-width: 560px;
+  margin: 0 auto 64px;
+  padding: 0 24px;
+  box-sizing: border-box;
+}
+.sf-fullbleed img {
+  display: block;
+  width: 100%;
+  border-radius: 16px;
+  aspect-ratio: 8 / 5;
+  object-fit: cover;
+}
+
+/* "Now it waits" block */
+.sf-now {
+  max-width: 680px;
+  margin: 0 auto 72px;
+  text-align: center;
+}
+.sf-now-heading {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  margin-bottom: 36px;
+}
+.sf-now-text {
+  font-size: clamp(0.95rem, 1.8vw, 1.05rem);
+  font-weight: 300;
+  color: #666;
+  line-height: 2;
+  margin-bottom: 20px;
+}
+
+/* 3-photo horizontal grid */
+.sf-photos {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 4px;
+  margin-bottom: 0;
+}
+.sf-photo-item {
+  overflow: hidden;
+}
+.sf-photo-item img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  transition: transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.sf-photo-item:hover img {
+  transform: scale(1.04);
+}
+
+/* ═══════════════════════════════════════════════
+   AN INVITATION — full-bleed split layout
+   ═══════════════════════════════════════════════ */
+.sf-invitation {
+  background: #f5f5f3;
+  padding: 0;
+}
+.sf-invite-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 580px;
+  align-items: stretch;
+}
+.sf-invite-photo {
+  overflow: hidden;
+}
+.sf-invite-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sf-invite-text {
+  padding: 80px clamp(32px, 5vw, 72px);
+  padding-right: clamp(32px, calc((100vw - 960px) / 2 + 48px), 200px);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.sf-invite-label {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #ffa44f;
+  margin-bottom: 20px;
+}
+.sf-invite-heading {
+  font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin-bottom: 28px;
+}
+.sf-invite-body {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.9;
+  margin-bottom: 16px;
+}
+
+/* Cost block */
+.sf-cost-block {
+  margin-top: 32px;
+  padding: 24px 28px;
+  background: #fff;
+  border-radius: 14px;
+  border-left: 3px solid #ffa44f;
+}
+.sf-cost-label {
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #bbb;
+  margin-bottom: 6px;
+}
+.sf-cost-amount {
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #ffa44f;
+  line-height: 1;
+  margin-bottom: 16px;
+}
+.sf-cost-desc {
+  font-size: 0.88rem;
+  color: #666;
+  line-height: 1.8;
+  margin-bottom: 12px;
+}
+.sf-cost-tagline {
+  font-size: 0.88rem;
+  color: #999;
+  font-style: italic;
+  line-height: 1.7;
+}
+
+/* ═══════════════════════════════════════════════
+   VISION — full-bleed render + quote
+   ═══════════════════════════════════════════════ */
+.sf-vision {
+  background: #111;
+  padding-bottom: 88px;
+}
+.sf-vision-img {
+  width: 100%;
+  margin-bottom: 0;
+}
+.sf-vision-img img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  object-position: center 35%;
+}
+.sf-vision-quote {
+  max-width: 680px;
+  margin: 72px auto 0;
+  text-align: center;
+  font-size: clamp(1.3rem, 3vw, 2rem);
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.65;
+  font-style: italic;
+  padding: 0 24px;
+}
+.sf-vision-sub {
+  display: block;
+  margin-top: 36px;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.25);
+  font-style: normal;
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE
+   ═══════════════════════════════════════════════ */
+@media (max-width: 960px) {
+  .sf-invite-layout {
+    grid-template-columns: 1fr;
+    min-height: unset;
+  }
+  .sf-invite-photo {
+    min-height: 380px;
+  }
+  .sf-invite-text {
+    padding: 56px 32px;
+  }
+}
+
+@media (max-width: 640px) {
+  .sf-hero { height: 60vw; min-height: 320px; }
+  .sf-story { padding-top: 56px; }
+  .sf-photos { grid-template-columns: 1fr; }
+  .sf-photo-item img { aspect-ratio: 16 / 10; }
+  .sf-vision-img img { aspect-ratio: 16 / 9; }
+}
