@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Forest Sauna (Banya) Ritual in Madeira | Spiral</title>
+  <meta name="description" content="A private wood-fired banya ritual in a eucalyptus forest near Funchal, Madeira. Fresh herbs, mountain water, live music, two banya masters and no more than eight guests." />
+  <meta name="theme-color" content="#14110e" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.spiralpark.com/" />
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png" />
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+  <link rel="manifest" href="favicon/site.webmanifest" />
+  <link rel="preload" as="image" href="images/steam/spi-hero-poster.jpg" />
+  <meta property="og:title" content="Spiral — Forest Sauna Ritual in Madeira" />
+  <meta property="og:description" content="A private banya practice in a eucalyptus forest near Funchal. Steam, mountain water, fresh herbs, live music and up to eight guests." />
+  <meta property="og:image" content="https://www.spiralpark.com/images/steam/spi-hero-poster.jpg" />
+  <meta property="og:url" content="https://www.spiralpark.com/" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Spiral — Forest Sauna Ritual in Madeira" />
+  <meta name="twitter:description" content="A private banya practice in a eucalyptus forest near Funchal. Steam, mountain water, fresh herbs, live music and up to eight guests." />
+  <meta name="twitter:image" content="https://www.spiralpark.com/images/steam/spi-hero-poster.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <!--
+    ════════════════════════════════════════════════════════════════
+    PHOTOS — how to insert
+    Every dark block with class "ph" is a photo slot. Its label says
+    which photo goes there and the recommended size.
+    To insert a photo, put an <img> inside the slot, e.g.:
+
+      <div class="ph ph--4x5" data-ph="02">
+        <img src="images/steam/02-hands.jpg" alt="Hands gathering eucalyptus" />
+        ...labels stay, the photo covers them...
+      </div>
+
+    The image is cropped automatically (object-fit: cover).
+    Export JPG, quality ~80, sRGB. Warm, low-key, natural light.
+    ════════════════════════════════════════════════════════════════
+  -->
+
+  <style>
+    :root {
+      --ink:      #110f0c;
+      --char:     #17130f;
+      --smoke:    #221d18;
+      --ash:      #3a322a;
+      --linen:    #f2ebdf;
+      --sand:     #e7dccb;
+      --paper:    #faf6ef;
+      --ember:    #c8864a;
+      --ember-lt: #e3aa6f;
+      --moss:     #6b7556;
+      --text-d:   #ece3d5;   /* text on dark */
+      --muted-d:  #a69884;
+      --text-l:   #2a231c;   /* text on light */
+      --muted-l:  #75695a;
+
+      --serif: "Cormorant Garamond", "Times New Roman", serif;
+      --sans:  "Raleway", system-ui, sans-serif;
+
+      --wrap: 1240px;
+      --gutter: clamp(20px, 5vw, 64px);
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    section[id] { scroll-margin-top: 72px; }
+    body {
+      margin: 0;
+      background: var(--ink);
+      color: var(--text-d);
+      font-family: var(--sans);
+      font-weight: 300;
+      font-size: 17px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    img { display: block; max-width: 100%; }
+    a { color: inherit; }
+
+    /* Film grain over the whole page — the "hand-made" texture */
+    body::after {
+      content: "";
+      position: fixed; inset: -50%;
+      pointer-events: none; z-index: 100;
+      opacity: .07;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    }
+
+    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ── Type ─────────────────────────────────────────── */
+    .eyebrow {
+      font-family: var(--sans);
+      font-size: 11px; font-weight: 500;
+      letter-spacing: .32em; text-transform: uppercase;
+      color: var(--ember-lt);
+      display: inline-flex; align-items: center; gap: 14px;
+      margin: 0 0 28px;
+    }
+    .eyebrow::before { content: ""; width: 34px; height: 1px; background: currentColor; opacity: .7; }
+    .light .eyebrow { color: var(--ember); }
+
+    h1, h2, h3 { font-family: var(--serif); font-weight: 300; margin: 0; letter-spacing: -.01em; }
+    h1 { font-size: clamp(46px, 7.4vw, 104px); line-height: .98; }
+    h2 { font-size: clamp(38px, 5.2vw, 72px); line-height: 1.02; }
+    h3 { font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; font-weight: 400; }
+    em, .it { font-style: italic; }
+    h1 em, h2 em { color: var(--ember-lt); }
+    .light h2 em { color: var(--ember); }
+    .lead {
+      font-family: var(--serif);
+      font-size: clamp(22px, 2.3vw, 30px);
+      line-height: 1.45; font-weight: 300;
+    }
+    p { margin: 0 0 1.1em; }
+    .muted { color: var(--muted-d); }
+    .light .muted { color: var(--muted-l); }
+
+    /* ── Buttons ──────────────────────────────────────── */
+    .btn {
+      --bg: var(--ember); --fg: #1a120a;
+      display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+      padding: 18px 34px;
+      border-radius: 999px;
+      background: var(--bg); color: var(--fg);
+      font-family: var(--sans); font-size: 13px; font-weight: 600;
+      letter-spacing: .16em; text-transform: uppercase; text-decoration: none;
+      border: 1px solid var(--bg);
+      transition: background .4s var(--ease), color .4s var(--ease), transform .4s var(--ease), border-color .4s var(--ease);
+      white-space: nowrap;
+    }
+    .btn:hover { background: var(--ember-lt); border-color: var(--ember-lt); transform: translateY(-2px); }
+    .btn svg { width: 18px; height: 18px; flex: none; }
+    .btn--ghost { --bg: transparent; --fg: var(--text-d); border-color: rgba(236,227,213,.35); }
+    .btn--ghost:hover { background: rgba(236,227,213,.08); border-color: var(--text-d); }
+    .light .btn--ghost { --fg: var(--text-l); border-color: rgba(42,35,28,.3); }
+    .light .btn--ghost:hover { background: rgba(42,35,28,.05); border-color: var(--text-l); }
+
+    /* ── Photo placeholder ────────────────────────────── */
+    .ph {
+      position: relative; overflow: hidden;
+      background:
+        radial-gradient(120% 90% at 30% 20%, rgba(200,134,74,.10), transparent 60%),
+        linear-gradient(160deg, #26201a, #15110d);
+      border-radius: 2px;
+      color: rgba(236,227,213,.55);
+      isolation: isolate;
+    }
+    .ph::before { /* thin inner frame */
+      content: ""; position: absolute; inset: 14px;
+      border: 1px dashed rgba(236,227,213,.14);
+      pointer-events: none; z-index: 0;
+    }
+    .ph-label {
+      position: absolute; left: 28px; right: 28px; bottom: 26px; z-index: 0;
+      font-family: var(--sans); font-size: 11px; line-height: 1.6; letter-spacing: .06em;
+    }
+    .ph-label b {
+      display: block; font-weight: 600; letter-spacing: .22em; text-transform: uppercase;
+      color: var(--ember-lt); margin-bottom: 6px; font-size: 10px;
+    }
+    .ph-label span { display: block; opacity: .75; }
+    .ph img, .ph video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; }
+    @media (max-width: 720px) {
+      .hero > .ph .ph-label, .final > .ph .ph-label { top: 84px; bottom: auto; left: 28px; right: 28px; text-align: left; }
+      .hero > .ph .ph-label span, .final > .ph .ph-label span,
+      .ph-small .ph-label span, .ph-stack .ph:last-child .ph-label span { display: none; }
+      .ph-small .ph-label, .ph-stack .ph:last-child .ph-label { left: 18px; right: 18px; bottom: 16px; }
+    }
+    .ph--16x9 { aspect-ratio: 16/9; }
+    .ph--3x2  { aspect-ratio: 3/2; }
+    .ph--4x5  { aspect-ratio: 4/5; }
+    .ph--1x1  { aspect-ratio: 1/1; }
+    .ph--2x3  { aspect-ratio: 2/3; }
+
+    /* ── Reveal ───────────────────────────────────────── */
+    .js .rv { opacity: 0; transform: translateY(28px); transition: opacity 1.2s var(--ease), transform 1.2s var(--ease); }
+    .js .rv.in { opacity: 1; transform: none; }
+    .js .rv.d1 { transition-delay: .12s; } .js .rv.d2 { transition-delay: .24s; } .js .rv.d3 { transition-delay: .36s; }
+    @media (prefers-reduced-motion: reduce) { .js .rv { opacity: 1; transform: none; transition: none; } .steam i { animation: none !important; } }
+
+    /* ── Nav ──────────────────────────────────────────── */
+    .nav {
+      position: fixed; inset: 0 0 auto; z-index: 50;
+      transition: background .5s var(--ease), backdrop-filter .5s, padding .5s var(--ease), border-color .5s;
+      padding: 26px 0;
+      border-bottom: 1px solid transparent;
+    }
+    .nav.scrolled {
+      background: rgba(17,15,12,.78);
+      backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      padding: 14px 0;
+      border-color: rgba(236,227,213,.07);
+    }
+    .nav .wrap { display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 24px; }
+    .brand { display: flex; align-items: center; justify-content: center; text-decoration: none; }
+    .nav-right { display: flex; justify-content: flex-end; }
+    .brand img { height: 60px; width: auto; filter: invert(1) sepia(.25) brightness(.95); transition: height .5s var(--ease); }
+    .nav.scrolled .brand img { height: 46px; }
+    @media (max-width: 720px) { .brand img { height: 50px; } .nav.scrolled .brand img { height: 40px; } }
+    .nav-links { display: flex; align-items: center; gap: 38px; }
+    .nav-links a:not(.btn) {
+      text-decoration: none; font-size: 12px; letter-spacing: .2em; text-transform: uppercase;
+      font-weight: 500; color: var(--text-d); opacity: .8; transition: opacity .3s;
+    }
+    .nav-links a:not(.btn):hover { opacity: 1; }
+    .nav .btn { padding: 12px 22px; font-size: 11px; }
+    @media (max-width: 860px) { .nav .wrap { grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); } .nav-links { visibility: hidden; overflow: hidden; } }
+
+    /* ── Hero ─────────────────────────────────────────── */
+    .hero {
+      position: relative; min-height: 100vh; min-height: 100svh;
+      display: flex; align-items: flex-end;
+      padding: 140px 0 clamp(40px, 7vh, 80px);
+      overflow: hidden;
+    }
+    .hero > .ph {
+      position: absolute; inset: 0; border-radius: 0;
+    }
+    .hero > .ph::before { inset: 22px; }
+    .hero > .ph .ph-label { left: auto; right: 44px; bottom: auto; top: 110px; text-align: right; max-width: 300px; }
+    .hero::after { /* legibility gradient over photo */
+      content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background:
+        linear-gradient(180deg, rgba(17,15,12,.6) 0%, rgba(17,15,12,0) 26%),
+        linear-gradient(90deg, rgba(17,15,12,.82) 0%, rgba(17,15,12,.5) 38%, rgba(17,15,12,0) 65%),
+        linear-gradient(0deg, rgba(17,15,12,.95) 0%, rgba(17,15,12,.55) 32%, rgba(17,15,12,0) 60%);
+    }
+    .hero > .ph img, .hero > .ph video { object-position: 50% 50%; }
+    @media (prefers-reduced-motion: reduce) { .hero > .ph video { display: none; } .hero > .ph { background: url("images/steam/spi-hero-poster.jpg") center/cover; } }
+    .final > .ph img { object-position: 60% 50%; }
+    .hero h1, .hero .lead { text-shadow: 0 2px 30px rgba(17,15,12,.55); }
+    @media (max-width: 720px) {
+      .hero::after { background: linear-gradient(180deg, rgba(17,15,12,.55) 0%, rgba(17,15,12,.2) 25%, rgba(17,15,12,.75) 55%, rgba(17,15,12,.96) 100%); }
+    }
+    .hero .wrap { position: relative; z-index: 3; }
+    .hero h1 { max-width: 13ch; margin-bottom: 30px; }
+    .loc {
+      display: flex; width: fit-content; align-items: center; gap: 10px; margin: 0 0 20px;
+      padding: 9px 18px 9px 14px; border-radius: 999px;
+      border: 1px solid rgba(227,170,111,.55); background: rgba(17,15,12,.45);
+      backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+      color: var(--ember-lt); font-size: 12px; font-weight: 600; letter-spacing: .18em; text-transform: uppercase; line-height: 1.3;
+    }
+    .loc svg { width: 16px; height: 16px; flex: none; }
+    .hero .lead { max-width: 34ch; color: rgba(236,227,213,.86); margin-bottom: 44px; }
+    .hero .lead:has(+ .hero-sub) { margin-bottom: 14px; }
+    .hero-sub { max-width: 54ch; font-size: 16px; margin-bottom: 40px; color: rgba(236,227,213,.72); text-shadow: 0 2px 20px rgba(17,15,12,.6); }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: clamp(48px, 9vh, 96px); }
+    .facts {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid rgba(236,227,213,.18);
+    }
+    .facts div { padding: 22px 24px 0 0; }
+    .facts b { font-size: clamp(20px, 2vw, 26px) !important; }
+    .facts b { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(24px, 2.4vw, 32px); line-height: 1.1; color: var(--text-d); }
+    .facts span { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted-d); }
+    @media (max-width: 720px) { .facts { grid-template-columns: repeat(2, 1fr); row-gap: 8px; } }
+
+    /* Drifting steam — alive even before the photo is in */
+    .steam { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow: hidden; }
+    .steam i {
+      position: absolute; bottom: -30%; width: 60vw; height: 60vw; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(236,227,213,.10), transparent);
+      filter: blur(30px);
+      animation: rise 22s linear infinite;
+    }
+    .steam i:nth-child(1) { left: -10%; animation-duration: 26s; }
+    .steam i:nth-child(2) { left: 30%;  animation-duration: 19s; animation-delay: -8s; width: 45vw; height: 45vw; }
+    .steam i:nth-child(3) { left: 60%;  animation-duration: 30s; animation-delay: -14s; }
+    @keyframes rise {
+      0%   { transform: translate3d(0, 0, 0) scale(.8); opacity: 0; }
+      20%  { opacity: 1; }
+      100% { transform: translate3d(8vw, -120vh, 0) scale(1.3); opacity: 0; }
+    }
+
+    .scroll-cue {
+      position: absolute; z-index: 3; right: var(--gutter); bottom: clamp(40px, 7vh, 80px);
+      writing-mode: vertical-rl; font-size: 10px; letter-spacing: .4em; text-transform: uppercase;
+      color: var(--muted-d); text-decoration: none; display: flex; align-items: center; gap: 16px;
+    }
+    .scroll-cue::after { content: ""; width: 1px; height: 64px; background: linear-gradient(var(--muted-d), transparent); }
+    @media (max-width: 720px) { .scroll-cue { display: none; } }
+
+    /* ── Sections ─────────────────────────────────────── */
+    .sec { padding: clamp(96px, 14vw, 180px) 0; position: relative; }
+    .light { background: var(--linen); color: var(--text-l); }
+    .paper { background: var(--paper); }
+    .dark2 { background: var(--char); }
+
+    /* Hand-drawn divider (a single imperfect brush line) */
+    .brush { display: block; width: 120px; height: 14px; color: var(--ember); margin: 0 0 36px; }
+
+    /* Manifesto */
+    .manifesto .wrap { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+    .manifesto h2 { margin-bottom: 36px; }
+    .manifesto .lead { color: var(--text-l); margin-bottom: 28px; }
+    .manifesto .ph { box-shadow: 0 40px 80px -40px rgba(42,35,28,.45); }
+    .manifesto .ph-wrap { position: relative; }
+    .manifesto .ph-small {
+      position: absolute; width: 42%; left: -18%; bottom: -12%;
+      border: 10px solid var(--linen);
+    }
+    .signature { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--muted-l); margin-top: 30px; }
+    @media (max-width: 900px) {
+      .manifesto .wrap { grid-template-columns: 1fr; }
+      .manifesto .ph-small { left: auto; right: -4%; bottom: -10%; width: 44%; }
+      .manifesto .ph-wrap { margin: 0 4% 40px 0; }
+    }
+
+    /* Elements */
+    .elements-head { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: end; margin-bottom: clamp(56px, 8vw, 96px); }
+    .elements-head p { max-width: 46ch; }
+    .elements { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(236,227,213,.12); border-left: 1px solid rgba(236,227,213,.12); }
+    .el { padding: clamp(32px, 4vw, 52px); border-right: 1px solid rgba(236,227,213,.12); border-bottom: 1px solid rgba(236,227,213,.12); transition: background .6s var(--ease); }
+    .el:hover { background: rgba(200,134,74,.05); }
+    .el svg { width: 44px; height: 44px; color: var(--ember-lt); margin-bottom: 30px; stroke-width: 1.1; }
+    .el h3 { margin-bottom: 12px; }
+    .el p { color: var(--muted-d); font-size: 15.5px; margin: 0; }
+    .el .n { font-family: var(--serif); font-style: italic; font-size: 15px; color: var(--muted-d); float: right; }
+    @media (max-width: 900px) { .elements-head { grid-template-columns: 1fr; } .elements { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 560px) { .elements { grid-template-columns: 1fr; } }
+
+    /* Ritual (3 acts) */
+    .ritual-intro { text-align: center; max-width: 760px; margin: 0 auto clamp(64px, 8vw, 110px); }
+    .ritual-intro .eyebrow { justify-content: center; }
+    .ritual-intro .eyebrow::after { content: ""; width: 34px; height: 1px; background: currentColor; opacity: .7; }
+    .ritual-intro h2 { margin-bottom: 26px; }
+    .ritual-intro .lead { max-width: 60ch; margin: 28px auto 0; }
+    .ritual-intro .muted { max-width: 60ch; margin: 8px auto 0; }
+    .act { display: grid; grid-template-columns: 5fr 6fr; gap: clamp(36px, 6vw, 96px); align-items: center; }
+    .act + .act { margin-top: clamp(80px, 11vw, 150px); }
+    .act:nth-child(even) { grid-template-columns: 6fr 5fr; }
+    .act:nth-child(even) .act-media { order: 2; }
+    .act h3 + p { font-size: 18px; }
+    .act-num {
+      font-family: var(--serif); font-style: italic; font-weight: 300;
+      font-size: clamp(90px, 11vw, 150px); line-height: .8; color: var(--ember);
+      opacity: .9; margin-bottom: 20px; display: block;
+    }
+    .act-time { font-size: 11px; letter-spacing: .26em; text-transform: uppercase; color: var(--muted-l); margin-bottom: 16px; display: block; }
+    .act h3 { font-size: clamp(34px, 3.6vw, 50px); font-weight: 300; margin-bottom: 22px; }
+    .act p { color: var(--muted-l); max-width: 44ch; }
+    .act ul { list-style: none; padding: 0; margin: 26px 0 0; border-top: 1px solid rgba(42,35,28,.14); }
+    .act li { padding: 12px 0; border-bottom: 1px solid rgba(42,35,28,.14); font-size: 15px; display: flex; gap: 14px; }
+    .act li::before { content: "—"; color: var(--ember); }
+    @media (max-width: 900px) {
+      .act, .act:nth-child(even) { grid-template-columns: 1fr; }
+      .act:nth-child(even) .act-media { order: 0; }
+    }
+
+    /* Hand-made gallery */
+    .gallery-head { display: flex; justify-content: space-between; align-items: end; gap: 40px; flex-wrap: wrap; margin-bottom: 56px; }
+    .gallery-head p { max-width: 40ch; margin: 0; }
+    .gallery { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; align-items: start; }
+    .gallery .ph { aspect-ratio: 4/5; }
+    .gallery { padding-bottom: 56px; }
+    .gallery .ph:nth-child(3n+2) { transform: translateY(56px); }
+    .js .gallery .rv:nth-child(3n+2):not(.in) { transform: translateY(84px); }
+    .quote-band { margin-top: clamp(72px, 9vw, 120px); text-align: center; }
+    .quote-band blockquote { margin: 0 auto; max-width: 22ch; font-family: var(--serif); font-weight: 300; font-style: italic; font-size: clamp(34px, 4.6vw, 62px); line-height: 1.12; }
+    @media (max-width: 700px) {
+      .gallery { grid-template-columns: 1fr 1fr; gap: 10px; }
+      .gallery { padding-bottom: 36px; }
+      .gallery .ph:nth-child(3n+2), .js .gallery .rv:nth-child(3n+2):not(.in) { transform: none; }
+      .gallery .ph:nth-child(even) { transform: translateY(36px); }
+    }
+
+    /* Small by design */
+    .small .wrap { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(40px, 7vw, 110px); align-items: center; }
+    .small h2 { margin-bottom: 30px; }
+    .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 46px 0 40px; padding: 34px 0; border-top: 1px solid rgba(236,227,213,.14); border-bottom: 1px solid rgba(236,227,213,.14); }
+    .stats b { display: block; font-family: var(--serif); font-weight: 300; font-size: clamp(48px, 5vw, 70px); line-height: 1; color: var(--ember-lt); }
+    .stats span { font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--muted-d); }
+    .small .ph-stack { position: relative; }
+    .small .ph-stack .ph:last-child { position: absolute; width: 48%; right: -8%; top: -10%; border: 10px solid var(--char); }
+    @media (max-width: 900px) { .small .wrap { grid-template-columns: 1fr; } .small .ph-stack { order: -1; margin-right: 8%; } .small .ph-stack .ph:last-child { right: -6%; top: -6%; } }
+
+    /* Included + price */
+    .offer .wrap { display: grid; grid-template-columns: 6fr 5fr; gap: clamp(40px, 6vw, 90px); align-items: start; }
+    .included h2 { margin-bottom: 40px; }
+    .inc-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: 36px; }
+    .inc-list li { display: flex; gap: 16px; align-items: flex-start; padding: 18px 0; border-bottom: 1px solid rgba(42,35,28,.12); font-size: 16px; }
+    .inc-list svg { width: 20px; height: 20px; flex: none; color: var(--ember); margin-top: 3px; }
+    @media (max-width: 560px) { .inc-list { grid-template-columns: 1fr; } }
+
+    .price-card {
+      background: var(--ink); color: var(--text-d);
+      padding: clamp(40px, 5vw, 64px);
+      border-radius: 2px; position: relative; overflow: hidden;
+      box-shadow: 0 50px 100px -50px rgba(17,15,12,.7);
+    }
+    .price-card::before {
+      content: ""; position: absolute; width: 420px; height: 420px; right: -160px; top: -180px; border-radius: 50%;
+      background: radial-gradient(closest-side, rgba(200,134,74,.28), transparent);
+    }
+    .price-card > * { position: relative; }
+    .price-card .eyebrow { margin-bottom: 30px; }
+    .price { font-family: var(--serif); font-weight: 300; font-size: clamp(80px, 9vw, 120px); line-height: .9; }
+    .price sup { font-size: .38em; vertical-align: top; position: relative; top: .35em; margin-left: 6px; color: var(--ember-lt); }
+    .per { font-size: 12px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted-d); margin: 14px 0 34px; }
+    .price-rows { border-top: 1px solid rgba(236,227,213,.14); margin-bottom: 36px; }
+    .price-rows div { display: flex; justify-content: space-between; gap: 20px; padding: 16px 0; border-bottom: 1px solid rgba(236,227,213,.14); font-size: 15px; }
+    .price-rows span:last-child { color: var(--muted-d); text-align: right; }
+    .price-card .btn { width: 100%; }
+    .price-note { font-size: 13px; color: var(--muted-d); margin: 22px 0 0; text-align: center; }
+    @media (max-width: 900px) { .offer .wrap { grid-template-columns: 1fr; } }
+
+    /* Formats: open & private */
+    .formats-head { max-width: 720px; margin-bottom: 64px; }
+    .formats-head h2 { margin-bottom: 22px; }
+    .formats { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 36px); }
+    .format { background: var(--smoke); border-radius: 2px; overflow: hidden; display: flex; flex-direction: column; }
+    .format .body { padding: clamp(32px, 4vw, 52px); display: flex; flex-direction: column; flex: 1; }
+    .format h3 { font-size: clamp(30px, 3vw, 42px); font-weight: 300; margin-bottom: 16px; }
+    .format p { color: var(--muted-d); }
+    .format .tag { font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--ember-lt); margin-bottom: 18px; }
+    .format .price-rows { margin: 4px 0 0; }
+    .format .price-note { text-align: left; margin: 14px 0 0; }
+    .format .link {
+      margin-top: auto; padding-top: 18px; display: inline-flex; align-items: center; gap: 12px;
+      font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 600; text-decoration: none; color: var(--text-d);
+    }
+    .format .link span { display: inline-block; transition: transform .4s var(--ease); }
+    .format .link:hover span { transform: translateX(6px); }
+    @media (max-width: 800px) { .formats { grid-template-columns: 1fr; } }
+
+    /* Voices (reviews) */
+    .voices { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(28px, 4vw, 56px); margin-top: 64px; }
+    .voice p { font-family: var(--serif); font-size: clamp(21px, 1.9vw, 25px); line-height: 1.45; font-style: italic; color: var(--text-l); }
+    .voice cite { font-style: normal; font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted-l); }
+    .voice .mark { font-family: var(--serif); font-size: 80px; line-height: .6; color: var(--ember); display: block; margin-bottom: 10px; }
+    .voice--todo p { color: var(--muted-l); }
+    @media (max-width: 900px) { .voices { grid-template-columns: 1fr; } }
+
+    /* FAQ */
+    .faq .wrap { display: grid; grid-template-columns: 4fr 7fr; gap: clamp(40px, 6vw, 100px); }
+    details { border-bottom: 1px solid rgba(236,227,213,.14); }
+    details:first-of-type { border-top: 1px solid rgba(236,227,213,.14); }
+    summary {
+      list-style: none; cursor: pointer; padding: 28px 50px 28px 0; position: relative;
+      font-family: var(--serif); font-size: clamp(22px, 2vw, 27px); font-weight: 400; line-height: 1.3;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: ""; position: absolute; right: 6px; top: 50%; width: 14px; height: 14px; margin-top: -7px;
+      background:
+        linear-gradient(var(--ember-lt), var(--ember-lt)) center/14px 1px no-repeat,
+        linear-gradient(var(--ember-lt), var(--ember-lt)) center/1px 14px no-repeat;
+      transition: transform .4s var(--ease);
+    }
+    details[open] summary::after { transform: rotate(45deg); }
+    details .ans { padding: 0 50px 30px 0; color: var(--muted-d); max-width: 60ch; }
+    details .ans p { margin: 0 0 .9em; }
+    details .ans h4 { font-family: var(--serif); font-weight: 400; font-size: 21px; color: var(--text-d); margin: 1.6em 0 .6em; }
+    details .ans ul { margin: 0 0 1em; padding-left: 1.1em; }
+    details .ans li { margin-bottom: .35em; }
+    details .ans li::marker { color: var(--ember-lt); }
+    details .ans .flow { font-family: var(--serif); font-style: italic; font-size: 22px; color: var(--ember-lt); }
+    @media (max-width: 900px) { .faq .wrap { grid-template-columns: 1fr; } }
+
+    /* Final CTA */
+    .final { position: relative; min-height: 92vh; display: flex; align-items: center; text-align: center; overflow: hidden; padding: 140px 0; }
+    .final > .ph { position: absolute; inset: 0; border-radius: 0; }
+    .final > .ph .ph-label { left: 44px; right: auto; bottom: 44px; text-align: left; max-width: 320px; }
+    .final::after {
+      content: ""; position: absolute; inset: 0; z-index: 2; pointer-events: none;
+      background: radial-gradient(70% 60% at 50% 50%, rgba(17,15,12,.62), rgba(17,15,12,.9));
+    }
+    .final .wrap { position: relative; z-index: 3; }
+    .final .eyebrow { justify-content: center; }
+    .final h2 { font-size: clamp(44px, 6.6vw, 96px); max-width: 15ch; margin: 0 auto 30px; }
+    .final h2, .final .lead { text-shadow: 0 2px 30px rgba(17,15,12,.6); }
+    .final .lead { max-width: 36ch; margin: 0 auto 48px; color: rgba(236,227,213,.82); }
+    .final-cta { display: flex; justify-content: center; flex-wrap: wrap; gap: 14px; }
+    .final small { display: block; margin-top: 30px; color: var(--muted-d); font-size: 13px; letter-spacing: .04em; }
+
+    /* Footer */
+    footer { background: var(--ink); border-top: 1px solid rgba(236,227,213,.08); padding: 70px 0 40px; font-size: 14px; color: var(--muted-d); }
+    footer .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    footer img { height: 56px; width: auto; filter: invert(1) sepia(.25) brightness(.8); margin-bottom: 22px; }
+    footer h4 { font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--text-d); margin: 0 0 18px; }
+    footer a { text-decoration: none; display: block; padding: 3px 0; transition: color .3s; }
+    footer a:hover { color: var(--ember-lt); }
+    footer p { margin: 0 0 4px; }
+    .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 36px; margin-top: 20px; border-top: 1px solid rgba(236,227,213,.08); font-size: 12px; }
+    .legal a { display: inline; }
+    @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr 1fr; } footer .wrap > div:first-child { grid-column: 1 / -1; } }
+
+    /* Mobile sticky booking bar */
+    .mbar {
+      position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 60;
+      display: none; align-items: center; justify-content: space-between; gap: 12px;
+      padding: 10px 10px 10px 22px; border-radius: 999px;
+      background: rgba(23,19,15,.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+      border: 1px solid rgba(236,227,213,.1);
+      transform: translateY(140%); transition: transform .6s var(--ease);
+    }
+    .mbar.show { transform: none; }
+    .mbar div { font-size: 12px; line-height: 1.3; color: var(--muted-d); }
+    .mbar b { display: block; font-family: var(--serif); font-size: 20px; font-weight: 400; color: var(--text-d); }
+    .mbar .btn { padding: 14px 22px; font-size: 11px; }
+    @media (max-width: 720px) { .mbar { display: flex; } footer { padding-bottom: 110px; } }
+
+    /* ── Split blocks (photo + text) — Hosts ───────────── */
+    .split { padding: clamp(80px, 12vw, 150px) 0; }
+    .split .wrap { display: grid; grid-template-columns: 5fr 7fr; gap: clamp(36px, 6vw, 90px); align-items: center; }
+    .split.rev .wrap { grid-template-columns: 7fr 5fr; }
+    .split.rev .split-media { order: 2; }
+    .split-media { position: relative; }
+    .split-media img { width: 100%; border-radius: 2px; }
+    .split-media figcaption {
+      margin-top: 14px; font-size: 11px; letter-spacing: .2em; text-transform: uppercase;
+      color: var(--muted-d); text-align: center;
+    }
+    @media (max-width: 820px) {
+      .split .wrap, .split.rev .wrap { grid-template-columns: 1fr; }
+      .split.rev .split-media { order: 0; }
+    }
+
+    /* ── Oscar block ──────────────────────────────────── */
+    .oscar-sec { padding: clamp(60px, 9vw, 110px) 0; text-align: center; }
+    .oscar-frame { display: inline-block; width: min(340px, 46%); min-width: 220px; }
+    .oscar-frame img { width: 100%; border-radius: 2px; box-shadow: 0 40px 80px -40px rgba(0,0,0,.6); }
+    .oscar-sec figcaption {
+      margin-top: 16px; font-family: var(--serif); font-size: 17px; font-style: italic;
+      color: var(--muted-d);
+    }
+    .oscar-sec figcaption b { font-style: normal; font-family: var(--sans); font-size: 11px; letter-spacing: .2em; text-transform: uppercase; color: var(--ember-lt); display: block; margin-bottom: 8px; }
+  </style>
+</head>
+<body id="top">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <!-- ═══ NAV ═══ -->
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <nav class="nav-links">
+        <a href="#ritual">The ritual</a>
+        <a href="#offer">Pricing</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <a href="#top" class="brand" aria-label="Spiral — home">
+        <img src="lgsp.png" alt="Spiral logo" />
+      </a>
+      <div class="nav-right">
+        <a href="#book" class="btn">Request an invitation</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ 1. HERO ═══ -->
+  <section class="hero">
+    <div class="ph">
+      <video autoplay muted loop playsinline preload="auto" poster="images/steam/spi-hero-poster.jpg" aria-label="Mist drifting over the eucalyptus forest above Funchal">
+        <source src="video/spi-hero-720.mp4" type="video/mp4" media="(max-width: 900px)" />
+        <source src="video/spi-hero-1080.mp4" type="video/mp4" />
+      </video>
+    </div>
+    <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+
+    <div class="wrap">
+      <p class="loc rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>Just 15 minutes from central Funchal</p>
+      <p class="eyebrow rv">A private banya practice · Madeira</p>
+      <h1 class="rv">Forest Sauna <em>(Banya) ritual</em></h1>
+      <p class="lead rv d1">Rooted in Slavic tradition, shaped into a slower, gentler ritual of our own.</p>
+      <p class="hero-sub muted rv d1">Fresh-cut herbs and branches from our land, mountain water and slow, even heat — an intimate, carefully guided experience in a quiet mountain forest.</p>
+      <div class="hero-cta rv d2">
+        <a href="#book" class="btn">Request an invitation</a>
+        <a href="#ritual" class="btn btn--ghost">Discover the ritual</a>
+      </div>
+      <div class="facts rv d3">
+        <div><b>3 hours</b></div>
+        <div><b>Up to 8 guests</b></div>
+        <div><b>2 banya masters</b></div>
+        <div><b>From €120 per guest</b></div>
+      </div>
+    </div>
+    <a href="#story" class="scroll-cue">Scroll</a>
+  </section>
+
+  <!-- ═══ 2. MANIFESTO ═══ -->
+  <section class="sec light manifesto" id="story">
+    <div class="wrap">
+      <div>
+        <h2 class="rv">You will smell it <em>before you see it.</em></h2>
+        <p class="lead rv d1">Eucalyptus and cypress, cut on our land that morning and still damp. A wood fire, lit hours before you arrive. Oak branches soaking in mountain water. Honey from our own hives. No essential oils, nothing out of a box, and nothing is rushed.</p>
+        <p class="rv d2 muted">Heat from a wood stove is a different heat. It rises in soft waves, smells of smoke and resin, and settles into the body slowly. The banya masters tend the fire themselves and read the room. When you step outside, the forest is cool and quiet, and the mountain water is colder than you expect.</p>
+      </div>
+      <div class="ph-wrap rv d1">
+        <div class="ph ph--4x5">
+          <img src="images/steam/02-eucalyptus.jpg" alt="Fresh eucalyptus leaves on wood" loading="lazy" />
+        </div>
+        <div class="ph ph--1x1 ph-small">
+          <img src="images/steam/03-lantern.jpg" alt="Candle lantern and singing bowl" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 3. THE RITUAL ═══ -->
+  <section class="sec light paper" id="ritual">
+    <div class="wrap">
+      <div class="ritual-intro">
+        <h2 class="rv">Three acts. <em>One long exhale.</em></h2>
+        <p class="lead rv d1">The ritual follows a rhythm we have refined over the years: heat, cooling, rest, and heat again. Each round builds gently on the last, so the body warms deeply and gradually — never through sudden or extreme heat.</p>
+      </div>
+
+      <div class="acts">
+        <article class="act">
+          <div class="act-media rv">
+            <div class="ph ph--4x5">
+              <img src="images/steam/04-tea.jpg" alt="Herbal tea being poured" loading="lazy" />
+            </div>
+          </div>
+          <div class="act-text rv d1">
+            <span class="act-num">I</span>
+            <h3>Arrive</h3>
+            <p>Linden-blossom tea, honeycomb from our hives and fruit from the land. Shoes off, phone away. Your banya masters get to know you and talk you through what lies ahead.</p>
+          </div>
+        </article>
+
+        <article class="act">
+          <div class="act-media rv">
+            <div class="ph ph--4x5">
+              <img src="images/steam/05-steam-room.jpg" alt="Warm glow inside the Spiral banya" loading="lazy" />
+            </div>
+          </div>
+          <div class="act-text rv d1">
+            <span class="act-num">II</span>
+            <h3>Banya</h3>
+            <p>Rounds of steam that build slowly. An infusion of fresh herbs poured onto the hot stones, steam moved around the body with fans, a rhythmic massage with leafy oak whisks, quiet live music. Between sessions — cold mountain water and forest air.</p>
+          </div>
+        </article>
+
+        <article class="act">
+          <div class="act-media rv">
+            <div class="ph ph--4x5">
+              <img src="images/steam/06-forest-rest.jpg" alt="Guest in a felt sauna hat resting in the forest after the steam" loading="lazy" />
+            </div>
+          </div>
+          <div class="act-text rv d1">
+            <span class="act-num">III</span>
+            <h3>Rest</h3>
+            <p>Back at the house: tea, fruit and quiet. Nobody hurries you. The body cools down gradually, and you leave warm, deeply relaxed and clear-headed.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 4. GALLERY ═══ -->
+  <section class="sec">
+    <div class="wrap">
+      <div class="gallery-head">
+        <h2 class="rv">Nothing here is <em>an afterthought.</em></h2>
+      </div>
+
+      <div class="gallery">
+        <div class="ph rv"><img src="images/steam/07-sauna-fog.jpg" alt="The Spiral banya in the misty forest" loading="lazy" /></div>
+        <div class="ph rv d1"><img src="images/steam/17-tea-pour.jpg" alt="Herbal tea poured by hand" loading="lazy" /></div>
+        <div class="ph rv d2"><img src="images/steam/09-honeycomb.jpg" alt="Honeycomb from the land" loading="lazy" /></div>
+        <div class="ph rv"><img src="images/steam/18-linden-tea.jpg" alt="Linden-blossom tea brewing" loading="lazy" /></div>
+        <div class="ph rv d1"><img src="images/steam/19-hydrangea.jpg" alt="Hydrangeas and eucalyptus in a vase" loading="lazy" /></div>
+        <div class="ph rv d2"><img src="images/steam/20-cat.jpg" alt="The Spiral cat asleep on a wooden chair" loading="lazy" /></div>
+      </div>
+
+      <div class="quote-band rv">
+        <blockquote>“Come for the steam. <span class="muted">Leave lighter.”</span></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 5. SMALL BY DESIGN ═══ -->
+  <section class="sec dark2">
+    <div class="wrap small">
+      <div class="wrap" style="padding:0">
+        <div>
+          <h2 class="rv">Eight guests at most. <em>Two banya masters.</em></h2>
+          <p class="lead rv d1" style="color:var(--muted-d)">The rhythm is set. The intensity is not. With so few guests, there is time to notice who needs more heat, who needs less, and when the room is ready for silence. Here, you are a guest, not a booking.</p>
+        </div>
+        <div class="ph-stack rv d1">
+          <div class="ph ph--4x5">
+            <img src="images/steam/12-stove.jpg" alt="The wood-fired stove inside the banya, lit with candles" loading="lazy" />
+          </div>
+          <div class="ph ph--1x1">
+            <img src="images/steam/13-cypress.jpg" alt="Fresh cypress branches" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 6. INCLUDED + PRICE ═══ -->
+  <section class="sec light offer" id="offer">
+    <div class="wrap">
+      <div class="included">
+        <h2 class="rv">Come as you are. <em>Everything is prepared.</em></h2>
+        <ul class="inc-list">
+          <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Two guided banya sessions</li>
+          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Fresh-cut herbs and branches from our land</li>
+          <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Towels and everything else you need</li>
+          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Cooling with cold mountain water</li>
+          <li class="rv"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Tea, fruit, nuts and honey from our hives</li>
+          <li class="rv d1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"><path d="M4 12.5 9.5 18 20 6"/></svg>Quiet live music</li>
+        </ul>
+      </div>
+
+      <aside class="price-card rv d1">
+        <div class="price"><sup>€</sup>120</div>
+        <p class="per">per guest in an open ritual, everything included</p>
+        <div class="price-rows">
+          <div><span>Open ritual</span><span>€120 per guest</span></div>
+          <div><span>Private ritual</span><a href="#formats" style="color:inherit;text-decoration:underline"><span>from €460 per group</span></a></div>
+          <div><span>Duration</span><span>3 hours</span></div>
+          <div><span>Group</span><span>up to 8 guests</span></div>
+        </div>
+        <a href="#book" class="btn">Ask about open dates</a>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ═══ 7. OPEN & PRIVATE ═══ -->
+  <section class="sec" id="formats">
+    <div class="wrap">
+      <div class="formats-head">
+        <h2 class="rv">Share the fire, <em>or keep it to yourselves.</em></h2>
+        <p class="lead rv d1" style="color:var(--muted-d)">Same ritual, same banya masters. The only difference is whether you join a small group of other guests or take the whole banya for your own.</p>
+      </div>
+      <div class="formats">
+        <article class="format rv">
+          <div class="ph ph--3x2">
+            <img src="images/steam/14-open-circle.jpg" alt="A small group of guests gathered after the ritual" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Open ritual</h3>
+            <p>Travelling alone, as a couple or with a friend? Join a small group of 4–8 guests on one of our open dates. €120 per guest. Dates go ahead with four guests or more.</p>
+            <a href="https://t.me/DariaMazalova" target="_blank" rel="noopener" class="link">Ask about open dates <span>→</span></a>
+          </div>
+        </article>
+        <article class="format rv d1">
+          <div class="ph ph--3x2">
+            <img src="images/steam/15-private.jpg" alt="The banya hidden in a private forest garden" loading="lazy" />
+          </div>
+          <div class="body">
+            <h3>Private ritual</h3>
+            <p>The whole banya for your group alone, on a date you choose — a couple, family, friends or team. Fewer guests means more of the masters' attention, so the price per group is fixed by size.</p>
+            <div class="price-rows">
+              <div><span>2 guests</span><span>€460</span></div>
+              <div><span>3–4 guests</span><span>€640</span></div>
+              <div><span>5–6 guests</span><span>€800</span></div>
+              <div><span>7–8 guests</span><span>€960</span></div>
+            </div>
+            <p class="price-note">Price per group, everything included.</p>
+            <a href="https://t.me/DariaMazalova" target="_blank" rel="noopener" class="link">Request a private date <span>→</span></a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 8. GUEST VOICES ═══ -->
+  <section class="sec light">
+    <div class="wrap">
+      <h2 class="rv">What our guests <em>take home.</em></h2>
+      <div class="voices">
+        <figure class="voice rv" style="margin:0">
+          <span class="mark">“</span>
+          <p>For the first time in years I managed to switch off my head and truly relax.</p>
+          <cite>— Richard, Rome</cite>
+        </figure>
+        <figure class="voice rv d1" style="margin:0">
+          <span class="mark">“</span>
+          <p>A fairy-tale place. It sent me to outer space — here I was born again.</p>
+          <cite>— Emily, Washington</cite>
+        </figure>
+        <figure class="voice rv d2" style="margin:0">
+          <span class="mark">“</span>
+          <p>Every detail — the scents, the music, the views, the honey, the mountain water — makes you forget your problems. After the ceremony my face was relaxed and my skin felt soft.</p>
+          <cite>— Vera, Kyiv</cite>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 9. FAQ ═══ -->
+  <section class="sec dark2 faq" id="faq">
+    <div class="wrap">
+      <div>
+        <h2 class="rv">Good <em>to know.</em></h2>
+      </div>
+      <div class="rv d1">
+        <details open>
+          <summary>How is it different from a sauna?</summary>
+          <div class="ans">
+            <p>A sauna is a hot room you sit in. The banya ritual is a guided sequence of heat, steam, cooling and rest: about 1.5–2 hours in the banya itself, three hours in all with tea on arrival and rest afterwards. Two banya masters are with you throughout. The heat builds gradually and never to extremes. Between rounds, the masters air the banya and keep the air fresh, so there is no need to step out. You simply rest while they cool you with water, move the steam with fans and give a rhythmic massage with leafy oak whisks.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What happens during the ritual?</summary>
+          <div class="ans">
+            <p><strong>Arrival.</strong> Herbal tea and fruit at the house, time to settle in and meet your banya masters.</p>
+            <p><strong>The banya — about 1.5–2 hours.</strong> Two sessions of three rounds each. An infusion of fresh herbs — eucalyptus, oregano, wormwood, cypress — is poured onto the hot stones, and the steam is moved around the body with fans. Between rounds, water is poured over you to cool the skin. The banya masters give a rhythmic massage with leafy oak whisks, to quiet live music of voice and acoustic instruments. Between sessions, you can cool off in the cold mountain water of the levada beside the banya. This is always optional.</p>
+            <p><strong>Rest.</strong> Back at the house: tea, fruit and time for the body to return to its normal temperature. We never rush this part. It is part of the ritual.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Is it safe for me?</summary>
+          <div class="ans">
+            <p>For most healthy adults, yes. The heat builds gradually, and the banya masters keep an eye on every guest throughout. You can step out, cool down, drink water or stop at any moment, and cold immersion is always optional. This is never about endurance.</p>
+            <p>Guests must be 18 or over.</p>
+            <p>Please do not take part if you:</p>
+            <ul>
+              <li>are pregnant</li>
+              <li>have serious or unstable cardiovascular disease</li>
+              <li>have uncontrolled high or low blood pressure</li>
+              <li>have epilepsy or another seizure disorder</li>
+              <li>have a fever, an active infection or are acutely unwell</li>
+              <li>are recovering from recent surgery or a medical procedure</li>
+              <li>take blood-thinning medication or have a bleeding or clotting disorder</li>
+              <li>have severe or uncontrolled asthma, or another serious respiratory condition</li>
+              <li>have open wounds, a skin infection or a contagious skin condition</li>
+              <li>have had alcohol or recreational drugs in the past 24 hours</li>
+            </ul>
+            <p>If you have a chronic condition, take medication that affects your heart or circulation, have an implanted medical device, or are unsure how your body will respond to heat and cold, please check with your doctor before booking.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How should I prepare?</summary>
+          <div class="ans">
+            <p>No previous banya experience is needed.</p>
+            <ul>
+              <li>Avoid eating for about two hours beforehand.</li>
+              <li>No alcohol or recreational drugs before or after the ritual.</li>
+              <li>Come well hydrated, and allow time before and after so you don't have to rush.</li>
+              <li>Swimwear is fine, but natural, breathable fabrics feel better in the heat. Cotton underwear works well.</li>
+              <li>Wear comfortable shoes for the short walk down to the banya.</li>
+            </ul>
+            <p>Everything else is explained when you arrive.</p>
+          </div>
+        </details>
+        <details>
+          <summary>How do I get there?</summary>
+          <div class="ans">
+            <p>We are just 15 minutes from central Funchal, easy to reach by Uber, Bolt or your own car. We are on a mountainside, so the road is steep in places. From the entrance, it is a walk of about 200 metres down through our land to the banya. We send detailed directions once you book.</p>
+          </div>
+        </details>
+        <details>
+          <summary>We're two or three. Do we have to book a private ritual?</summary>
+          <div class="ans">
+            <p>No. Book places in an open ritual at €120 per guest and share the banya with a small group of other guests. Write to us and we will tell you which open dates are coming up and how many places are still free. A private ritual is for when you want the banya and a date entirely to yourselves.</p>
+          </div>
+        </details>
+        <details>
+          <summary>What if an open date doesn't fill?</summary>
+          <div class="ans">
+            <p>Open rituals go ahead with at least four guests. If a date doesn't reach that number, we let you know 24 hours in advance and offer you another date or your money back. If you'd rather not wait, you can also upgrade to a private ritual for two at €460.</p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 9b. HOSTS ═══ -->
+  <section class="split rev">
+    <div class="wrap">
+      <figure class="split-media rv">
+        <img src="images/steam/host-01.jpg" alt="Daria and Ruslan" loading="lazy" />
+        <figcaption>Daria &amp; Ruslan</figcaption>
+      </figure>
+      <div class="rv d1">
+        <p class="eyebrow">The people behind Spiral</p>
+        <p>We are Daria and Ruslan. Spiral is our private banya practice in a eucalyptus forest. It began as a place for ourselves and our close friends, and now we share it with a few others.</p>
+        <p>We prepare each ritual ourselves — gathering fresh branches and herbs from the land, lighting the stove hours before you arrive, making tea and music. It is small by design, so we can take care of every person who comes through the door.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ 9c. OSCAR ═══ -->
+  <section class="oscar-sec">
+    <div class="wrap">
+      <figure class="rv">
+        <div class="oscar-frame">
+          <img src="images/steam/oscar.jpg" alt="Oscar the cat" loading="lazy" />
+        </div>
+        <figcaption><b>Oscar.</b> He took the most comfortable chair long ago.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ═══ 10. FINAL CTA ═══ -->
+  <section class="final" id="book">
+    <div class="ph">
+      <img src="images/steam/01-hero.jpg" alt="The Spiral banya among agapanthus and misty eucalyptus" loading="lazy" />
+    </div>
+    <div class="steam" aria-hidden="true"><i></i><i></i><i></i></div>
+    <div class="wrap">
+      <p class="eyebrow rv">The fire is lit a few hours before you arrive.</p>
+      <h2 class="rv d1">The door is not locked. <em>It starts with a message.</em></h2>
+      <p class="lead rv d2">Tell us when you would like to come and who you are coming with. We reply personally and prepare the rest.</p>
+      <div class="final-cta rv d3">
+        <a href="https://wa.me/351962312800" target="_blank" rel="noopener" class="btn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1-.8-.3-1.8-.8-2.8-2-.6-.6-.9-1.2-1-1.4-.1-.2 0-.4.1-.5l.4-.4.3-.5v-.5l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.2.3-.9.9-.9 2.2s1 2.6 1.1 2.7c.1.2 1.9 2.9 4.6 4 .6.3 1.1.5 1.5.6.6.2 1.2.2 1.6.1.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.3-.2-.6-.3Z"/></svg>
+          WhatsApp
+        </a>
+        <a href="https://t.me/DariaMazalova" target="_blank" rel="noopener" class="btn btn--ghost">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 8.9-8c.4-.3-.1-.5-.6-.2l-11 6.9-4.7-1.5c-1-.3-1-1 .2-1.5L20.6 3c.9-.3 1.6.2 1.3 1.3Z"/></svg>
+          Telegram
+        </a>
+      </div>
+      <small class="rv d3">WhatsApp +351 962 312 800 · Telegram @DariaMazalova</small>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer>
+    <div class="wrap">
+      <div>
+        <img src="lgsp.png" alt="Spiral logo" />
+        <p>Sauna (banya) rituals in Madeira.</p>
+        <p>Operated by Ruslan Trubchik · NIF 311270530</p>
+        <p>Vereda da Cova 57 · 9060-080 Funchal · Portugal</p>
+        <p><a href="mailto:rtrubchik@gmail.com" style="display:inline">rtrubchik@gmail.com</a> · <a href="tel:+351910293415" style="display:inline">+351 910 293 415</a></p>
+      </div>
+      <div>
+        <h4>Spiral</h4>
+        <a href="#ritual">The ritual</a>
+        <a href="#offer">Pricing</a>
+        <a href="#faq">FAQ</a>
+        <a href="#book">Book</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://instagram.com/spiral_madeira" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" rel="noopener">Community (Telegram)</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="booking-conditions.html">Booking Conditions</a>
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a>
+        <a href="consumer-dispute-resolution.html">Consumer Dispute Resolution</a>
+      </div>
+      <div class="legal">
+        <span>© 2026 Spiral — All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile sticky booking bar -->
+  <div class="mbar" id="mbar">
+    <div><b>From €120 per guest</b>3 hours · up to 8 guests</div>
+    <a href="#book" class="btn">Reserve</a>
+  </div>
+
+  <script>
+    // Nav background after hero
+    const nav = document.getElementById('nav');
+    const mbar = document.getElementById('mbar');
+    const hero = document.querySelector('.hero');
+    const finalSec = document.getElementById('book');
+    let pastHero = false, atFinal = false;
+    const upd = () => { nav.classList.toggle('scrolled', pastHero); mbar.classList.toggle('show', pastHero && !atFinal); };
+    new IntersectionObserver(([e]) => { pastHero = !e.isIntersecting; upd(); }, { rootMargin: '-80px 0px 0px 0px' }).observe(hero);
+    new IntersectionObserver(([e]) => { atFinal = e.isIntersecting; upd(); }).observe(finalSec);
+
+    // Reveal on scroll
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.rv').forEach(el => io.observe(el));
+  </script>
+</body>
+</html>

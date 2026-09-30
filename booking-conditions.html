@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Booking & Participation Conditions — Spiral</title>
+  <meta name="description" content="Booking, cancellation, safety and participation conditions for Spiral wood-fired banya rituals in Madeira." />
+  <meta name="theme-color" content="#14110e" />
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="apple-touch-icon" href="favicon/apple-touch-icon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #110f0c; --char: #17130f; --linen: #f2ebdf; --paper: #faf6ef;
+      --ember: #c8864a; --ember-lt: #e3aa6f;
+      --text-d: #ece3d5; --muted-d: #a69884; --text-l: #2a231c; --muted-l: #75695a;
+      --serif: "Cormorant Garamond", "Times New Roman", serif;
+      --sans: "Raleway", system-ui, sans-serif;
+      --wrap: 1240px; --gutter: clamp(20px, 5vw, 64px);
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body { margin: 0; background: var(--paper); color: var(--text-l); font-family: var(--sans); font-weight: 300; font-size: 16.5px; line-height: 1.75; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+    body::after { content: ""; position: fixed; inset: -50%; pointer-events: none; z-index: 100; opacity: .06;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E"); }
+    a { color: inherit; }
+    .wrap { width: 100%; max-width: var(--wrap); margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* Nav — same as the landing, always solid */
+    .nav { position: sticky; top: 0; z-index: 50; background: rgba(17,15,12,.92); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); padding: 14px 0; color: var(--text-d); }
+    .nav .wrap { display: grid; grid-template-columns: minmax(0,1fr) auto minmax(0,1fr); align-items: center; gap: 24px; }
+    .nav .back { font-size: 12px; letter-spacing: .2em; text-transform: uppercase; font-weight: 500; text-decoration: none; opacity: .8; transition: opacity .3s; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .nav .back:hover { opacity: 1; }
+    .brand { display: flex; justify-content: center; }
+    .brand img { height: 46px; width: auto; filter: invert(1) sepia(.25) brightness(.95); }
+    .nav-right { display: flex; justify-content: flex-end; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; padding: 12px 22px; border-radius: 999px; background: var(--ember); color: #1a120a; font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; text-decoration: none; transition: background .4s var(--ease), transform .4s var(--ease); white-space: nowrap; }
+    .btn:hover { background: var(--ember-lt); transform: translateY(-2px); }
+    @media (max-width: 600px) { .nav .back span { display: none; } .brand img { height: 40px; } }
+
+    /* Language switch */
+    .lang { display: flex; gap: 8px; justify-content: flex-end; padding-top: 28px; }
+    .lang a { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; font-weight: 600; text-decoration: none; padding: 8px 16px; border-radius: 999px; border: 1px solid rgba(42,35,28,.2); color: var(--muted-l); transition: all .3s; }
+    .lang a:hover, .lang a.on { background: var(--text-l); color: var(--paper); border-color: var(--text-l); }
+
+    /* Document */
+    .doc { padding: clamp(40px, 6vw, 80px) 0 clamp(80px, 10vw, 140px); scroll-margin-top: 80px; }
+    .doc + .doc { border-top: 1px solid rgba(42,35,28,.12); }
+    .doc-head { margin-bottom: clamp(40px, 6vw, 80px); max-width: 900px; }
+    .doc h1 { font-family: var(--serif); font-weight: 300; font-size: clamp(42px, 6vw, 80px); line-height: 1; letter-spacing: -.01em; margin: 0 0 22px; }
+    .doc-sub { font-family: var(--serif); font-style: italic; font-size: clamp(20px, 2vw, 26px); color: var(--ember); margin: 0 0 6px; }
+    .doc-upd { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; color: var(--muted-l); margin: 0; }
+    .doc-grid { display: grid; grid-template-columns: 280px minmax(0, 1fr); gap: clamp(40px, 6vw, 96px); align-items: start; }
+    .toc { position: sticky; top: 100px; }
+    .toc ol { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(42,35,28,.12); }
+    .toc li a { display: flex; gap: 14px; padding: 10px 0; border-bottom: 1px solid rgba(42,35,28,.12); text-decoration: none; font-size: 14px; line-height: 1.4; color: var(--muted-l); transition: color .3s; }
+    .toc li a:hover { color: var(--text-l); }
+    .toc li a span { font-family: var(--serif); font-style: italic; color: var(--ember); min-width: 18px; }
+    .doc-body { max-width: 68ch; }
+    .doc-body section { scroll-margin-top: 90px; padding-bottom: 12px; }
+    .doc-body section + section { margin-top: 40px; }
+    .doc-body h2 { font-family: var(--serif); font-weight: 400; font-size: clamp(26px, 2.6vw, 34px); line-height: 1.15; margin: 0 0 18px; display: flex; gap: 16px; align-items: baseline; }
+    .doc-body h2 span { font-style: italic; font-weight: 300; color: var(--ember); }
+    .doc-body p { margin: 0 0 1em; }
+    .doc-body ul { list-style: none; margin: 0 0 1.2em; padding: 0; }
+    .doc-body li { position: relative; padding: 8px 0 8px 28px; border-bottom: 1px solid rgba(42,35,28,.1); }
+    .doc-body li::before { content: "—"; position: absolute; left: 0; color: var(--ember); }
+    .doc-body .addr { padding: 20px 24px; background: var(--linen); border-left: 2px solid var(--ember); line-height: 1.8; }
+    .doc-body a { color: var(--ember); text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: 3px; word-break: break-word; }
+    mark { background: #f3d9b8; color: var(--text-l); padding: 1px 4px; border-radius: 2px; }
+    @media (max-width: 900px) { .doc-grid { grid-template-columns: 1fr; } .toc { position: static; } }
+
+    /* Footer — same as the landing */
+    footer { background: var(--ink); color: var(--muted-d); padding: 70px 0 40px; font-size: 14px; line-height: 1.7; }
+    footer .wrap { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; }
+    footer img { height: 56px; width: auto; filter: invert(1) sepia(.25) brightness(.8); margin-bottom: 22px; }
+    footer h4 { font-family: var(--sans); font-weight: 500; font-size: 11px; letter-spacing: .24em; text-transform: uppercase; color: var(--text-d); margin: 0 0 18px; }
+    footer a { text-decoration: none; display: block; padding: 3px 0; transition: color .3s; }
+    footer a:hover { color: var(--ember-lt); }
+    footer p { margin: 0 0 4px; }
+    .legal { grid-column: 1 / -1; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 36px; margin-top: 20px; border-top: 1px solid rgba(236,227,213,.08); font-size: 12px; }
+    @media (max-width: 760px) { footer .wrap { grid-template-columns: 1fr 1fr; } footer .wrap > div:first-child { grid-column: 1 / -1; } }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="wrap">
+      <a href="index.html" class="back">← <span>The ritual</span></a>
+      <a href="index.html" class="brand" aria-label="Spiral — home"><img src="lgsp.png" alt="Spiral logo" /></a>
+      <div class="nav-right"><a href="index.html#book" class="btn">Book</a></div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div class="lang"><a href="#en" class="on" data-l="en">English</a><a href="#pt" data-l="pt">Português</a></div>
+
+  <article class="doc" id="en" lang="en">
+    <header class="doc-head">
+      <h1>Booking &amp; Participation Conditions</h1>
+      <p class="doc-sub">Spiral — Wood-fired Banya Rituals, Funchal, Madeira</p>
+      <p class="doc-upd">Last updated: September 2026</p>
+    </header>
+    <div class="doc-grid">
+      <nav class="toc" aria-label="Contents"><ol><li><a href="#en-1"><span>1</span>Service Provider</a></li><li><a href="#en-2"><span>2</span>The Ritual</a></li><li><a href="#en-3"><span>3</span>Informational Website and Booking Enquiries</a></li><li><a href="#en-4"><span>4</span>Prices</a></li><li><a href="#en-5"><span>5</span>Booking Confirmation and Payment</a></li><li><a href="#en-6"><span>6</span>Cancellations and Changes by the Customer</a></li><li><a href="#en-7"><span>7</span>Cancellation or Rescheduling by the Provider</a></li><li><a href="#en-8"><span>8</span>Right of Withdrawal for Distance Bookings</a></li><li><a href="#en-9"><span>9</span>Health, Safety and Eligibility</a></li><li><a href="#en-10"><span>10</span>Alcohol, Drugs and Guest Conduct</a></li><li><a href="#en-11"><span>11</span>Responsibility and Liability</a></li><li><a href="#en-12"><span>12</span>Complaints</a></li><li><a href="#en-13"><span>13</span>Alternative Consumer Dispute Resolution</a></li><li><a href="#en-14"><span>14</span>Personal Data</a></li><li><a href="#en-15"><span>15</span>Applicable Law</a></li><li><a href="#en-16"><span>16</span>Contact</a></li></ol></nav>
+      <div class="doc-body"><section id="en-1"><h2><span>1</span>Service Provider</h2><p>These Booking &amp; Participation Conditions apply to enquiries, bookings and participation in wood-fired banya rituals ("Rituals") provided by Ruslan Trubchik, independent service provider (trabalhador independente), NIF 311270530, at Vereda da Cova 57, São Gonçalo, 9060-080 Funchal, Madeira, Portugal ("we", "us", "the Provider").</p></section><section id="en-2"><h2><span>2</span>The Ritual</h2><p>The Ritual is a guided wood-fired banya (sauna) experience for groups of up to 8 participants, by prior arrangement only. The full experience lasts approximately 3 hours, including approximately 1.5–2 hours in the banya.</p>
+<p>Depending on the session, the experience may include heat and steam, a traditional whisk massage, rest and hydration periods, and optional cold-water immersion.</p></section><section id="en-3"><h2><span>3</span>Informational Website and Booking Enquiries</h2><p>The Spiral website is currently informational only. It does not provide online checkout, accept payment or automatically confirm bookings.</p>
+<p>Booking enquiries may be made through WhatsApp, Telegram, e-mail or other contact channels displayed on the website. Sending an enquiry does not create a confirmed booking or guarantee availability.</p></section><section id="en-4"><h2><span>4</span>Prices</h2><p>The current public price for an open Ritual is €120 per participant.</p>
+<p>Private Rituals are priced per group: €460 for 2 participants; €640 for 3–4 participants; €800 for 5–6 participants; €960 for 7–8 participants.</p>
+<p>The applicable total price and any agreed inclusions or variations will be communicated before the booking is confirmed. Any price shown on the website should be read together with the booking details confirmed directly by the Provider.</p></section><section id="en-5"><h2><span>5</span>Booking Confirmation and Payment</h2><p>A booking becomes confirmed only when the Provider expressly confirms the date, price and applicable booking conditions to the customer and any payment or deposit agreed for that booking has been received.</p>
+<p>Payment instructions are communicated directly to the customer outside the public website. The website itself does not collect or store payment-card details.</p>
+<p>For group bookings, the person arranging the booking is responsible for communicating the relevant participation and safety information to the other participants.</p></section><section id="en-6"><h2><span>6</span>Cancellations and Changes by the Customer</h2><p>If the customer cancels more than 48 hours before the scheduled start of the Ritual, they are entitled to a full refund, or to reschedule the Ritual (subject to availability within the following 7 days).</p>
+<p>If the customer cancels between 24 and 48 hours before the scheduled start of the Ritual, they are entitled to a 50% refund, or to reschedule the Ritual (subject to availability within the following 7 days).</p>
+<p>If the customer cancels less than 24 hours before the scheduled start of the Ritual, no refund is due.</p></section><section id="en-7"><h2><span>7</span>Cancellation or Rescheduling by the Provider</h2><p>We may cancel or reschedule a Ritual where it would be unsafe or unreasonable to proceed, including because of severe weather, fire risk, technical problems, illness of essential staff or other circumstances affecting safe operation.</p>
+<p>Where we cancel a confirmed Ritual and cannot offer a suitable alternative date, amounts paid for the cancelled Ritual will be refunded.</p>
+<p>An open Ritual takes place only if at least 4 participants have confirmed bookings. If this minimum is not reached, we will inform the booked participants at least 24 hours before the scheduled start and offer them either another date or a full refund of the amounts paid.</p></section><section id="en-8"><h2><span>8</span>Right of Withdrawal for Distance Bookings</h2><p>Portuguese law generally provides consumers with a 14-day right of withdrawal for certain distance contracts. However, under Article 17(1)(k) of Decree-Law no. 24/2014, this right does not apply, unless otherwise agreed, to contracts for services related to leisure activities where the contract provides for a specific date or period of performance.</p>
+<p>This legal exception is separate from any cancellation or rescheduling rights that we voluntarily grant under these Conditions.</p></section><section id="en-9"><h2><span>9</span>Health, Safety and Eligibility</h2><p>Participation is limited to persons aged 18 or over unless the Provider expressly agrees otherwise in advance.</p>
+<p>Before taking part, each participant must read and sign the Participant Information &amp; Informed Consent form.</p>
+<p>Sauna, significant heat exposure and cold-water immersion may not be suitable for everyone. Participants should seek appropriate medical advice before participation if they have a relevant medical condition or are uncertain whether the experience is suitable for them.</p>
+<p>The informed-consent form contains the current health and safety declarations applicable to participation. Participants must provide truthful information relevant to safe participation.</p>
+<p>Cold-water immersion is optional. A participant may leave the banya or decline any part of the experience at any time and must immediately tell a banya master if they feel unwell.</p></section><section id="en-10"><h2><span>10</span>Alcohol, Drugs and Guest Conduct</h2><p>Participants must follow reasonable safety instructions given by the banya masters.</p>
+<p>Participation while under the influence of alcohol, recreational drugs or other substances that may impair judgement or increase health risk is not permitted.</p>
+<p>The Provider may refuse or stop participation where there are reasonable safety concerns or where a participant's conduct creates a risk to themselves or others.</p>
+<p>Where participation is refused or stopped for these reasons, no refund is due.</p></section><section id="en-11"><h2><span>11</span>Responsibility and Liability</h2><p>The Provider will take reasonable measures to conduct the Ritual safely and participants are expected to comply with the safety instructions provided.</p>
+<p>Nothing in these Conditions excludes or limits liability, consumer rights or other legal protections that cannot lawfully be excluded or limited under Portuguese law.</p>
+<p>The Participant Information &amp; Informed Consent form is intended to document the nature of the activity, relevant risks and participant declarations; it does not waive rights or liabilities that cannot legally be waived.</p></section><section id="en-12"><h2><span>12</span>Complaints</h2><p>Consumers may use the Portuguese <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a> in accordance with applicable law.</p></section><section id="en-13"><h2><span>13</span>Alternative Consumer Dispute Resolution</h2><p>In the event of a consumer dispute, the consumer may contact the competent consumer alternative dispute-resolution entity for the Autonomous Region of Madeira:</p>
+<p class="addr">Centro de Arbitragem de Conflitos de Consumo da Madeira<br>Rua Direita n.º 27, 1.º Andar<br>9050-450 Funchal, Madeira, Portugal<br>Tel.: +351 291 750 330<br>E-mail: <a href="mailto:centroarbitragem.sre@madeira.gov.pt">centroarbitragem.sre@madeira.gov.pt</a><br>Website: <a href="https://www.madeira.gov.pt/cacc" target="_blank" rel="noopener">https://www.madeira.gov.pt/cacc</a></p></section><section id="en-14"><h2><span>14</span>Personal Data</h2><p>Personal data is processed in accordance with our <a href="privacy-policy.html">Privacy Policy</a>.</p></section><section id="en-15"><h2><span>15</span>Applicable Law</h2><p>These Conditions are governed by Portuguese law. Nothing in these Conditions affects any mandatory consumer-protection or jurisdiction rights applicable to the customer.</p></section><section id="en-16"><h2><span>16</span>Contact</h2><p class="addr">Ruslan Trubchik — NIF 311270530<br>Vereda da Cova 57, São Gonçalo, 9060-080 Funchal, Madeira, Portugal<br>E-mail: <a href="mailto:rtrubchik@gmail.com">rtrubchik@gmail.com</a><br>WhatsApp: <a href="tel:+351962312800">+351 962 312 800</a><br>Telegram: @DariaMazalova</p></section></div>
+    </div>
+  </article>
+
+  <article class="doc" id="pt" lang="pt">
+    <header class="doc-head">
+      <h1>Condições De Reserva E Participação</h1>
+      <p class="doc-sub">Spiral — Cerimónias de Sauna/Banya, Funchal, Madeira</p>
+      <p class="doc-upd">Última atualização: setembro de 2026</p>
+    </header>
+    <div class="doc-grid">
+      <nav class="toc" aria-label="Contents"><ol><li><a href="#pt-1"><span>1</span>Prestador de Serviços</a></li><li><a href="#pt-2"><span>2</span>A Cerimónia</a></li><li><a href="#pt-3"><span>3</span>Site Informativo e Pedidos de Reserva</a></li><li><a href="#pt-4"><span>4</span>Preços</a></li><li><a href="#pt-5"><span>5</span>Confirmação da Reserva e Pagamento</a></li><li><a href="#pt-6"><span>6</span>Cancelamentos e Alterações pelo Cliente</a></li><li><a href="#pt-7"><span>7</span>Cancelamento ou Reagendamento pelo Prestador</a></li><li><a href="#pt-8"><span>8</span>Direito de Livre Resolução em Reservas à Distância</a></li><li><a href="#pt-9"><span>9</span>Saúde, Segurança e Elegibilidade</a></li><li><a href="#pt-10"><span>10</span>Álcool, Drogas e Conduta dos Participantes</a></li><li><a href="#pt-11"><span>11</span>Responsabilidade</a></li><li><a href="#pt-12"><span>12</span>Reclamações</a></li><li><a href="#pt-13"><span>13</span>Resolução Alternativa de Litígios de Consumo</a></li><li><a href="#pt-14"><span>14</span>Dados Pessoais</a></li><li><a href="#pt-15"><span>15</span>Lei Aplicável</a></li><li><a href="#pt-16"><span>16</span>Contacto</a></li></ol></nav>
+      <div class="doc-body"><section id="pt-1"><h2><span>1</span>Prestador de Serviços</h2><p>As presentes Condições de Reserva e Participação aplicam-se aos pedidos de informação, reservas e participação nas cerimónias de sauna/banya ("Cerimónias") prestadas por Ruslan Trubchik, trabalhador independente, NIF 311270530, em Vereda da Cova 57, São Gonçalo, 9060-080 Funchal, Madeira, Portugal ("nós", "o Prestador").</p></section><section id="pt-2"><h2><span>2</span>A Cerimónia</h2><p>A Cerimónia é uma experiência guiada de sauna/banya a lenha e bem-estar, com duração total aproximada de 3 a 4 horas, incluindo cerca de 1,5 a 2 horas na sauna, para grupos até 8 participantes, exclusivamente mediante marcação prévia.</p>
+<p>Consoante a sessão, a experiência pode incluir calor e vapor, massagem tradicional com vénico, períodos de descanso e hidratação e imersão opcional em água fria.</p></section><section id="pt-3"><h2><span>3</span>Site Informativo e Pedidos de Reserva</h2><p>O site Spiral é, nesta fase, exclusivamente informativo. Não disponibiliza checkout online, não aceita pagamentos e não confirma reservas automaticamente.</p>
+<p>Os pedidos de reserva podem ser efetuados através de WhatsApp, Telegram, e-mail ou outros canais de contacto indicados no site. O envio de um pedido não constitui uma reserva confirmada nem garante disponibilidade.</p></section><section id="pt-4"><h2><span>4</span>Preços</h2><p>O preço público atual é de €145 por participante.</p>
+<p>O valor mínimo de uma Cerimónia privada é de €580.</p>
+<p>O preço total aplicável e quaisquer inclusões ou variações acordadas serão comunicados antes da confirmação da reserva. Qualquer preço apresentado no site deve ser lido em conjunto com os detalhes da reserva confirmados diretamente pelo Prestador.</p></section><section id="pt-5"><h2><span>5</span>Confirmação da Reserva e Pagamento</h2><p>A reserva apenas se considera confirmada quando o Prestador confirmar expressamente ao cliente a data, o preço e as condições aplicáveis e tiver sido recebido qualquer pagamento ou sinal acordado para essa reserva.</p>
+<p>As instruções de pagamento são comunicadas diretamente ao cliente fora do site público. O site não recolhe nem armazena dados completos de cartões de pagamento.</p>
+<p>Nas reservas de grupo, a pessoa que efetua a reserva é responsável por comunicar aos restantes participantes as informações relevantes sobre participação e segurança.</p></section><section id="pt-6"><h2><span>6</span>Cancelamentos e Alterações pelo Cliente</h2><p>Se o cliente cancelar com mais de 48 horas de antecedência em relação ao início previsto da Cerimónia, tem direito a reembolso integral, ou a reagendar a Cerimónia (sujeito a disponibilidade nos 7 dias seguintes).</p>
+<p>Se o cliente cancelar entre 24 e 48 horas antes do início previsto da Cerimónia, tem direito a reembolso de 50%, ou a reagendar a Cerimónia (sujeito a disponibilidade nos 7 dias seguintes).</p>
+<p>Se o cliente cancelar com menos de 24 horas de antecedência em relação ao início previsto da Cerimónia, não há lugar a reembolso.</p></section><section id="pt-7"><h2><span>7</span>Cancelamento ou Reagendamento pelo Prestador</h2><p>Podemos cancelar ou reagendar uma Cerimónia quando não seja seguro ou razoável realizá-la, incluindo devido a condições meteorológicas severas, risco de incêndio, problemas técnicos, doença de pessoal essencial ou outras circunstâncias que afetem a segurança da operação.</p>
+<p>Se cancelarmos uma Cerimónia confirmada e não for possível oferecer uma data alternativa adequada, os montantes pagos relativamente à Cerimónia cancelada serão reembolsados.</p></section><section id="pt-8"><h2><span>8</span>Direito de Livre Resolução em Reservas à Distância</h2><p>A lei portuguesa prevê, em regra, um direito de livre resolução de 14 dias para determinados contratos celebrados à distância. Contudo, nos termos do artigo 17.º, n.º 1, alínea k), do Decreto-Lei n.º 24/2014, esse direito não se aplica, salvo acordo em contrário, a contratos relativos a serviços relacionados com atividades de lazer quando o contrato preveja uma data ou período de execução específicos.</p>
+<p>Esta exceção legal é independente de quaisquer direitos de cancelamento ou reagendamento que concedamos voluntariamente ao abrigo das presentes Condições.</p></section><section id="pt-9"><h2><span>9</span>Saúde, Segurança e Elegibilidade</h2><p>A participação é limitada a pessoas com 18 ou mais anos, salvo acordo expresso em contrário pelo Prestador antes da sessão.</p>
+<p>Antes de participar, cada participante deve ler e assinar o formulário Informação ao Participante e Consentimento Informado.</p>
+<p>A sauna, a exposição significativa ao calor e a imersão em água fria podem não ser adequadas para todas as pessoas. Os participantes devem procurar aconselhamento médico adequado antes de participar se tiverem uma condição médica relevante ou dúvidas sobre a adequação da experiência.</p>
+<p>O formulário de consentimento informado contém as declarações de saúde e segurança atualmente aplicáveis à participação. Os participantes devem fornecer informação verdadeira que seja relevante para uma participação segura.</p>
+<p>A imersão em água fria é opcional. O participante pode sair da sauna ou recusar qualquer parte da experiência a qualquer momento e deve informar imediatamente um sauna master caso se sinta mal.</p></section><section id="pt-10"><h2><span>10</span>Álcool, Drogas e Conduta dos Participantes</h2><p>Os participantes devem seguir as instruções razoáveis de segurança dadas pelos sauna masters.</p>
+<p>Não é permitida a participação sob o efeito de álcool, drogas recreativas ou outras substâncias que possam prejudicar o discernimento ou aumentar o risco para a saúde.</p>
+<p>O Prestador pode recusar ou interromper a participação quando existam motivos razoáveis de segurança ou quando a conduta de um participante represente um risco para si próprio ou para terceiros.</p>
+<p>Quando a participação seja recusada ou interrompida por estes motivos, não há lugar a reembolso.</p></section><section id="pt-11"><h2><span>11</span>Responsabilidade</h2><p>O Prestador adotará medidas razoáveis para conduzir a Cerimónia em segurança e os participantes devem cumprir as instruções de segurança fornecidas.</p>
+<p>Nada nas presentes Condições exclui ou limita responsabilidade, direitos do consumidor ou outras proteções legais que não possam ser legalmente excluídas ou limitadas ao abrigo da lei portuguesa.</p>
+<p>O formulário Informação ao Participante e Consentimento Informado destina-se a documentar a natureza da atividade, os riscos relevantes e as declarações do participante; não constitui renúncia a direitos ou responsabilidades que legalmente não possam ser afastados.</p></section><section id="pt-12"><h2><span>12</span>Reclamações</h2><p>Os consumidores podem utilizar o <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações</a> português nos termos da legislação aplicável.</p></section><section id="pt-13"><h2><span>13</span>Resolução Alternativa de Litígios de Consumo</h2><p>Em caso de litígio de consumo, o consumidor pode recorrer à entidade de resolução alternativa de litígios competente para a Região Autónoma da Madeira:</p>
+<p class="addr">Centro de Arbitragem de Conflitos de Consumo da Madeira<br>Rua Direita n.º 27, 1.º Andar<br>9050-450 Funchal, Madeira, Portugal<br>Tel.: +351 291 750 330<br>E-mail: <a href="mailto:centroarbitragem.sre@madeira.gov.pt">centroarbitragem.sre@madeira.gov.pt</a><br>Website: <a href="https://www.madeira.gov.pt/cacc" target="_blank" rel="noopener">https://www.madeira.gov.pt/cacc</a></p></section><section id="pt-14"><h2><span>14</span>Dados Pessoais</h2><p>Os dados pessoais são tratados de acordo com a nossa <a href="privacy-policy.html#pt">Política de Privacidade</a>.</p></section><section id="pt-15"><h2><span>15</span>Lei Aplicável</h2><p>As presentes Condições regem-se pela lei portuguesa. Nada nas presentes Condições prejudica quaisquer direitos imperativos de proteção do consumidor ou de competência jurisdicional aplicáveis ao cliente.</p></section><section id="pt-16"><h2><span>16</span>Contacto</h2><p class="addr">Ruslan Trubchik — NIF 311270530<br>Vereda da Cova 57, São Gonçalo, 9060-080 Funchal, Madeira, Portugal<br>E-mail: <a href="mailto:rtrubchik@gmail.com">rtrubchik@gmail.com</a><br>WhatsApp: +351 962 312 800<br>Telegram: @DariaMazalova</p></section></div>
+    </div>
+  </article>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <img src="lgsp.png" alt="Spiral logo" />
+        <p>Wood-fired banya rituals in Madeira.</p>
+        <p>Ruslan Trubchik · NIF 311270530</p>
+        <p>Funchal, Madeira, Portugal</p>
+        <p><a href="tel:+351962312800" style="display:inline">+351 962 312 800</a></p>
+      </div>
+      <div>
+        <h4>Spiral</h4>
+        <a href="index.html#ritual">The ritual</a>
+        <a href="index.html#offer">Pricing</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#book">Book</a>
+      </div>
+      <div>
+        <h4>Follow</h4>
+        <a href="https://instagram.com/spiral_madeira" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" rel="noopener">Community (Telegram)</a>
+      </div>
+      <div>
+        <h4>Legal</h4>
+        <a href="booking-conditions.html">Booking conditions</a>
+        <a href="privacy-policy.html">Privacy policy</a>
+        <a href="https://www.livroreclamacoes.pt/" target="_blank" rel="noopener">Livro de Reclamações (Complaints Book)</a>
+      </div>
+      <div class="legal">
+        <span>© 2026 Spiral — All rights reserved</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Highlight the language whose document is on screen
+    const tabs = document.querySelectorAll('.lang a');
+    new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) tabs.forEach(t => t.classList.toggle('on', t.dataset.l === e.target.id));
+    }), { rootMargin: '-40% 0px -55% 0px' }).observe(document.getElementById('en'));
+    const io2 = new IntersectionObserver(es => es.forEach(e => {
+      if (e.isIntersecting) tabs.forEach(t => t.classList.toggle('on', t.dataset.l === e.target.id));
+    }), { rootMargin: '-40% 0px -55% 0px' });
+    io2.observe(document.getElementById('pt'));
+  </script>
+</body>
+</html>
