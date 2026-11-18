@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title data-i18n="doc.title">Spiral Flora — живой атлас нашей земли</title>
+  <meta name="description" content="Живой атлас растений Spiral Park Madeira: польза, баня, чай, древесина, безопасность." />
+  <meta name="theme-color" content="#14110e" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.spiralpark.com/flora" />
+  <meta property="og:title" content="Spiral Flora — The living atlas of our land" />
+  <meta property="og:description" content="Растения и грибы Spiral Park Madeira: баня, чай, еда, древесина, лечебные свойства и безопасность." />
+  <meta property="og:image" content="https://www.spiralpark.com/images/flora/cover/cover-3.jpg" />
+  <meta property="og:url" content="https://www.spiralpark.com/flora" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="spiral-base.css" />
+  <link rel="stylesheet" href="flora.css" />
+</head>
+<body id="top" data-page="home">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <nav class="nav-links">
+        <a href="flora.html#atlas" data-i18n="nav.explore">Explore</a>
+        <a href="flora.html#walk" data-i18n="nav.walk">Walk</a>
+        <a href="flora.html#seasons" data-i18n="nav.seasons">Seasons</a>
+      </nav>
+      <a href="index.html" class="brand" aria-label="Spiral — home"><img src="lgsp.png" alt="Spiral logo" /></a>
+      <div class="nav-right">
+        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div>
+        <a href="index.html" class="btn btn--ghost nav-back">← Spiral</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="fhero">
+    <div class="fhero-bg"></div>
+    <script>
+      // Обложка: одно из четырёх фото с участка, случайно при каждом открытии.
+      (function () {
+        var n = 1 + Math.floor(Math.random() * 4);
+        document.currentScript.previousElementSibling.style.backgroundImage = 'url("images/flora/cover/cover-' + n + '.jpg")';
+      })();
+    </script>
+    <svg class="fhero-spiral" viewBox="-100 -100 200 200" aria-hidden="true"><path id="heroSpiral" fill="none" stroke="currentColor" stroke-width=".35"/></svg>
+    <div class="wrap">
+      <p class="eyebrow rv" data-i18n="hero.eyebrow">Spiral Flora · Мадейра</p>
+      <h1 class="rv" data-i18n-em="hero.h1">Живой атлас <em>нашей земли.</em></h1>
+      <p class="lead rv d1" id="heroLead"></p>
+      <div class="fhero-cta rv d2">
+        <a href="#atlas" class="btn" data-i18n="hero.cta1">Открыть атлас</a>
+        <a href="#walk" class="btn btn--ghost" data-i18n="hero.cta2">Прогулка</a>
+      </div>
+      <div class="facts rv d3" id="facts"></div>
+    </div>
+  </section>
+
+  <section class="sec light" id="ways">
+    <div class="wrap">
+      <div class="ways-head">
+        <p class="eyebrow rv" data-i18n="ways.eyebrow">Три способа войти</p>
+        <h2 class="rv" data-i18n-em="ways.h2">Смотреть. <em>Гулять.</em> Ждать сезона.</h2>
+      </div>
+      <div class="ways">
+        <article class="way rv"><span class="num">01</span><h3 data-i18n="ways.1t">Атлас</h3><p data-i18n="ways.1">Что растёт на нашей земле и чем это полезно: баня, чай, еда, древесина, мёд. И чего стоит остерегаться.</p><a class="more" href="#atlas"><b data-i18n="ways.1a">Открыть атлас</b> <span>→</span></a></article>
+        <article class="way rv d1"><span class="num">02</span><h3 data-i18n="ways.2t">Прогулка</h3><p data-i18n="ways.2">Одно растение на прогулку: найти, рассмотреть, вспомнить, на что оно годится.</p><a class="more" href="#walk"><b data-i18n="ways.2a">Выбрать прогулку</b> <span>→</span></a></article>
+        <article class="way rv d2"><span class="num">03</span><h3 data-i18n="ways.3t">Сезоны</h3><p data-i18n="ways.3">Что цветёт, плодоносит и где искать грибы в каждое время года на Мадейре.</p><a class="more" href="#seasons"><b data-i18n="ways.3a">Времена природы</b> <span>→</span></a></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec paper light" id="atlas" style="padding-top:clamp(80px,10vw,130px)">
+    <div class="wrap">
+      <div class="atlas-head">
+        <div><p class="eyebrow rv" data-i18n="atlas.eyebrow">Spiral Flora</p><h2 class="rv" data-i18n-em="atlas.h2"><em>Атлас</em></h2></div>
+        <p class="rv d1" data-i18n="atlas.lead">Ищите по названию, латыни или по пользе: для бани, чая, еды, древесины.</p>
+      </div>
+      <div class="tools">
+        <label class="search"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M16.5 16.5L21 21"/></svg><input id="q" type="search" autocomplete="off" /></label>
+      </div>
+      <div class="tabs" id="tabs" role="tablist"></div>
+      <div class="uses" id="uses"></div>
+      <p class="status-line" id="statusLine" aria-live="polite"></p>
+      <div class="cards" id="cards"></div>
+      <div class="more-row"><button class="btn btn--ghost" id="moreBtn" hidden data-i18n="atlas.more">Показать ещё</button></div>
+    </div>
+  </section>
+
+  <section class="sec dark2 walk" id="walk">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow rv" data-i18n="walk.eyebrow">Прогулка</p>
+        <h2 class="rv" data-i18n-em="walk.h2">Найти. <em>Побыть рядом.</em></h2>
+        <p class="intro rv d1" data-i18n="walk.intro">Растение, которое сейчас в сезоне: цветёт или плодоносит. Выйдите на тропу и найдите его. Рассмотрите листья, цветы, плоды. Вспомните, на что оно годится.</p>
+        <div class="invite rv d1" aria-live="polite">
+          <span class="for" data-i18n="walk.for">Приглашение</span>
+          <blockquote id="wq"></blockquote>
+          <p class="plant" id="wplant"></p>
+          <div class="icons" id="wicons"></div>
+        </div>
+        <div class="walk-cta rv d2">
+          <a class="btn" id="wopen" href="#" data-i18n="walk.open">Открыть карточку</a>
+          <button class="btn btn--ghost" id="wnext" type="button" data-i18n="walk.next">Другое растение</button>
+        </div>
+      </div>
+      <div class="walk-ph rv d1" id="wph"></div>
+    </div>
+  </section>
+
+  <section class="sec light" id="seasons">
+    <div class="wrap">
+      <div class="seasons-head">
+        <p class="eyebrow rv" data-i18n="seasons.eyebrow">Сезоны</p>
+        <h2 class="rv" data-i18n-em="seasons.h2">Времена <em>природы</em></h2>
+        <p class="lead rv d1" data-i18n="seasons.lead">Что цветёт, что плодоносит и когда идут грибы — по месяцам, для климата Мадейры.</p>
+      </div>
+      <div class="sline rv" id="sline" role="tablist"></div>
+      <div class="sbody" id="sbody"></div>
+    </div>
+  </section>
+
+  <section class="sec mirror" id="mirror">
+    <div class="wrap">
+      <blockquote class="rv" data-i18n-em="mirror.q">Природа как <em>зеркало.</em></blockquote>
+      <p class="rv d1" data-i18n="mirror.p">Каждое растение живёт по своим законам и чем-то делится с нами: теплом, вкусом, запахом, деревом.</p>
+      <a href="#atlas" class="btn btn--ghost rv d2" data-i18n="mirror.cta">Продолжить исследование</a>
+    </div>
+  </section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <img src="lgsp.png" alt="Spiral logo" />
+        <p data-i18n="foot.tag">Spiral Flora — живой атлас нашей земли.</p>
+        <p data-i18n="foot.op">Оператор: Ruslan Trubchik · NIF 311270530</p>
+        <p>Vereda da Cova 57 · 9060-080 Funchal · Portugal</p>
+        <p><a href="mailto:rtrubchik@gmail.com" style="display:inline">rtrubchik@gmail.com</a> · <a href="tel:+351910293415" style="display:inline">+351 910 293 415</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.flora">Флора</h4>
+        <a href="flora.html#atlas" data-i18n="nav.explore">Explore</a>
+        <a href="flora.html#walk" data-i18n="nav.walk">Walk</a>
+        <a href="flora.html#seasons" data-i18n="nav.seasons">Seasons</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.follow">Мы в сетях</h4>
+        <a href="https://instagram.com/spiral_madeira" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" rel="noopener" data-i18n="foot.tg">Сообщество (Telegram)</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.legal">Документы</h4>
+        <a href="booking-conditions.html" data-i18n="foot.booking">Условия бронирования</a>
+        <a href="privacy-policy.html" data-i18n="foot.privacy">Политика конфиденциальности</a>
+        <a href="consumer-dispute-resolution.html" data-i18n="foot.dispute">Разрешение споров</a>
+      </div>
+      <div class="legal"><span data-i18n="foot.rights">© 2026 Spiral — все права защищены</span><span data-i18n="foot.note">Сведения о пользе и лечебных свойствах не заменяют консультацию врача.</span></div>
+    </div>
+  </footer>
+
+  <script src="flora-data.js"></script>
+  <script src="flora-config.js"></script>
+  <script src="flora-art.js"></script>
+  <script src="flora.js"></script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiral Flora</title>
+  <meta name="description" content="Страница растения Spiral Flora: польза, древесина, безопасность." />
+  <meta name="theme-color" content="#14110e" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://www.spiralpark.com/flora-plant.html" />
+  <meta property="og:title" content="Spiral Flora" />
+  <meta property="og:image" content="https://www.spiralpark.com/images/steam/02-eucalyptus.jpg" />
+  <meta property="og:type" content="article" />
+  <link rel="icon" href="favicon/favicon.ico" sizes="48x48" />
+  <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="spiral-base.css" />
+  <link rel="stylesheet" href="flora.css" />
+</head>
+<body id="top" data-page="plant">
+  <script>document.documentElement.classList.add('js');</script>
+
+  <header class="nav" id="nav">
+    <div class="wrap">
+      <nav class="nav-links">
+        <a href="flora.html#atlas" data-i18n="nav.explore">Explore</a>
+        <a href="flora.html#walk" data-i18n="nav.walk">Walk</a>
+        <a href="flora.html#seasons" data-i18n="nav.seasons">Seasons</a>
+      </nav>
+      <a href="index.html" class="brand" aria-label="Spiral — home"><img src="lgsp.png" alt="Spiral logo" /></a>
+      <div class="nav-right">
+        <div class="lang" role="group" aria-label="Language"><button type="button" data-lang="ru">RU</button><button type="button" data-lang="en">EN</button></div>
+        <a href="index.html" class="btn btn--ghost nav-back">← Spiral</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="phero">
+    <div class="phero-bg" id="pbg"></div>
+    <div class="phero-art" id="part" hidden></div>
+    <div class="wrap">
+      <p class="crumbs"><a href="flora.html#atlas" data-i18n="nav.explore">Атлас</a> / <span id="pcat"></span> / <span id="pid"></span></p>
+      <h1 id="pname"></h1>
+      <p class="latin" id="platin"></p>
+      <p class="essence" id="pess"></p>
+      <div class="icons icons--lg" id="picons"></div>
+      <div class="axes" id="axes"></div>
+    </div>
+    <p class="photo-credit" id="pcredit"></p>
+  </section>
+
+  <section class="sec light" style="padding:20px 0 40px">
+    <div class="wrap" id="chapters"></div>
+  </section>
+
+  <section class="dark2" style="padding:0"><div class="wrap">
+    <div class="pnav">
+      <a id="pprev" href="#"><span data-i18n="p.prev">← Предыдущее</span><span class="name"></span></a>
+      <button id="pshare" type="button" data-i18n="p.share">Поделиться ссылкой</button>
+      <a id="pnext" href="#" style="text-align:right"><span data-i18n="p.next">Следующее →</span><span class="name"></span></a>
+    </div>
+  </div></section>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <img src="lgsp.png" alt="Spiral logo" />
+        <p data-i18n="foot.tag">Spiral Flora — живой атлас нашей земли.</p>
+        <p data-i18n="foot.op">Оператор: Ruslan Trubchik · NIF 311270530</p>
+        <p>Vereda da Cova 57 · 9060-080 Funchal · Portugal</p>
+        <p><a href="mailto:rtrubchik@gmail.com" style="display:inline">rtrubchik@gmail.com</a> · <a href="tel:+351910293415" style="display:inline">+351 910 293 415</a></p>
+      </div>
+      <div>
+        <h4 data-i18n="foot.flora">Флора</h4>
+        <a href="flora.html#atlas" data-i18n="nav.explore">Explore</a>
+        <a href="flora.html#walk" data-i18n="nav.walk">Walk</a>
+        <a href="flora.html#seasons" data-i18n="nav.seasons">Seasons</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.follow">Мы в сетях</h4>
+        <a href="https://instagram.com/spiral_madeira" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://t.me/+J0U1CG0tSghhNWIy" target="_blank" rel="noopener" data-i18n="foot.tg">Сообщество (Telegram)</a>
+      </div>
+      <div>
+        <h4 data-i18n="foot.legal">Документы</h4>
+        <a href="booking-conditions.html" data-i18n="foot.booking">Условия бронирования</a>
+        <a href="privacy-policy.html" data-i18n="foot.privacy">Политика конфиденциальности</a>
+        <a href="consumer-dispute-resolution.html" data-i18n="foot.dispute">Разрешение споров</a>
+      </div>
+      <div class="legal"><span data-i18n="foot.rights">© 2026 Spiral — все права защищены</span><span data-i18n="foot.note">Сведения о пользе и лечебных свойствах не заменяют консультацию врача.</span></div>
+    </div>
+  </footer>
+
+  <script src="flora-data.js"></script>
+  <script src="flora-config.js"></script>
+  <script src="flora-art.js"></script>
+  <script src="flora.js"></script>
+</body>
+</html>
