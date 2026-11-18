@@ -161,6 +161,8 @@
     });
     return out;
   }
+  // Версия фото для адреса: при замене фото (новый источник/автор) браузер не покажет старое из кэша.
+  const ver = (str) => { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h * 33) ^ str.charCodeAt(i)) >>> 0; return h.toString(36); };
   const lines = (s) => (s || '').split(/\n+/).map((x) => x.trim()).filter(Boolean);
   function ingest(rows) {
     const draft = window.FLORA_DRAFT || {};
@@ -181,7 +183,7 @@
         wiki_ru: safeUrl(r.wiki_ru), wiki_en: safeUrl(r.wiki_en), idc: r.id_confidence || 'Предварительно',
         archived: /^(true|да|1|yes)$/i.test(r.archived || ''),
         bloom: r.bloom || '', fruit: r.fruit || '', bm: monthSet(r.bloom), fm: monthSet(r.fruit),
-        photo: src ? { src: /^https?:\/\//.test(src) || src.includes('/') ? src : 'images/flora/' + src, author: r.photo_author || '', license: r.photo_license || '', licenseUrl: safeUrl(r.photo_license_url), page: safeUrl(r.photo_source_url), genus: norm(r.photo_scope) === 'род', spiral: norm(r.photo_scope) === 'spiral' } : null,
+        photo: src ? { src: (/^https?:\/\//.test(src) || src.includes('/') ? src : 'images/flora/' + src) + (/^https?:/.test(src) ? '' : '?v=' + ver(src + (r.photo_source_url || '') + (r.photo_author || '') + (r.photo_scope || ''))), author: r.photo_author || '', license: r.photo_license || '', licenseUrl: safeUrl(r.photo_license_url), page: safeUrl(r.photo_source_url), genus: norm(r.photo_scope) === 'род', spiral: norm(r.photo_scope) === 'spiral' } : null,
       };
       p.name = () => (EN() && p.name_en) || p.name_ru;
       p.hay = norm([p.name_ru, p.name_en, p.latin, p.essence_ru, p.essence_en, ...p.uses_ru, ...p.uses_en, ...p.wood_ru, ...p.wood_en, ...p.medicinal_ru, ...p.medicinal_en, ...p.tags.map((k) => TAGS[k][0] + ' ' + TAGS[k][1]), p.cat].join(' '));
